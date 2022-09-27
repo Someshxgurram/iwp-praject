@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(lbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 10%;
+}
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(114.83deg, rgba(255, 255, 255, 0.5) 0.8%, rgba(3, 17, 30, 0) 101.31%);
+    filter: drop-shadow(0px 25px 25px rgba(0, 0, 0, 0.15));
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    color: black;
+    margin-right: 25%;
+    margin-left: 25%;
+    width: 40%;
+    border-radius: 10px;
+   padding:3% 0%;
+}
+.register input{
+    width: 250px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.register button{
+    width: 260px;
+    height: 36px;
+    background:  #F17119;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.register button:hover{
+    transform: scaleY(1.1);
+}
+.login{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.login p{
+    font-weight: 100;
+}
+.login a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: #F17119;
+    transition: 0.5s;
+}
+.login a:hover{
+    transform: scaleX(1.1);
+}
+@media screen and (max-width:1116px) {
+    .register {
+        width: 50%;
+        padding: 10%;
+    }
+}
+@media screen and (max-width:986px) {
+    .register{
+        width: 55%;
+        padding: 12%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .register{
+        width: 60%;
+        padding: 14%;
+    }
+}
+@media screen and (max-width:731px) {
+    .register{
+        padding: 15%;
+        width: 65%;
+    }
+}
+@media screen and (max-width:684px) {
+    .register{
+        padding: 18%;
+        width: 70%;
+    }
+}
+@media screen and (max-width:650px) {
+    .register{
+        width: 80%;
+        padding: 20%;
+    }
+}
+@media screen and (max-width:526px) {
+    .register{
+        width: 100%;
+        padding: 30%;
+    }
+}

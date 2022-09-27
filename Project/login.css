@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(lbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 10%;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(114.83deg, rgba(255, 255, 255, 0.5) 0.8%, rgba(3, 17, 30, 0) 101.31%);
+    filter: drop-shadow(0px 25px 25px rgba(0, 0, 0, 0.15));
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    color: black;
+    margin-right: 25%;
+    margin-left: 25%;
+    width: 40%;
+    border-radius: 10px;
+   padding:3% 0%;
+}
+.login input{
+    width: 250px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+.login button{
+    width: 260px;
+    height: 36px;
+    background:  #F17119;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.login button:hover{
+    transform: scaleY(1.1);
+}
+.register{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.register p{
+    font-weight: 100;
+}
+.register a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: #F17119;
+    transition: 0.5s;
+}
+.register a:hover{
+    transform: scaleX(1.1);
+}
+
+@media screen and (max-width:986px) {
+    .login{
+        width: 50%;
+        padding: 12%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .login{
+        width: 60%;
+    }
+}
+@media screen and (max-width:705px) {
+    .login{
+        padding: 14%;
+    }
+}
+@media screen and (max-width:650px) {
+    .login{
+        width: 80%;
+        padding: 20%;
+    }
+}
+@media screen and (max-width:520px) {
+    .login{
+        width: 100%;
+    }
+}
