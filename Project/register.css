@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(lbg.jpg);
+    background-image: url(./images/lbg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
