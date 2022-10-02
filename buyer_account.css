@@ -59,6 +59,83 @@ body{
     font-size: 40px;
 }
 
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 10% 3% 2%;
+}
+.container .user_details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    background-color: orange;
+    height: 550px;
+}
+.container .user_details .display{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+    margin: 5%
+}
+.container .user_details .display p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.container .user_details .display .fa{
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+}
+.container .user_details hr{
+    width: 90%;
+    border: 1px solid black;
+}
+
+
+.container .wallet{
+    background-color: orange;
+    width: 90%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container .wallet h1{
+    margin-bottom: 5%;
+}
+.container .wallet p{
+    margin-bottom: 5%;
+    padding: 2% 5%;
+    color: whitesmoke;
+    font-size: 20px;
+    background-color: #2C3A47;
+}
+.container .wallet .top_up{
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    width: 30%;
+    grid-row-gap: 10px;
+    grid-column-gap:10px;
+}
+.container .wallet .top_up button{
+    background-color: #2C3A47;
+    color: whitesmoke;
+    padding: 10%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #2C3A47;
+}
+.container .wallet .top_up button:hover{
+    background: orange;
+}
+
 @media screen and (max-width:1015px) {
     .nav{
         display: flex;
@@ -91,6 +168,33 @@ body{
     .nav .menu.menu.res ul a span{
         animation: slide;
         animation-duration: 1s;
+    }
+    .container{
+        grid-template-columns: 100%;
+        grid-row-gap: 50px;
+        padding-left: 10%;
+    }
+    .container .user_details{
+        height: 700px;
+    }
+}
+@media screen and (max-width:800px) {
+    .container{
+        padding-top: 20%;
+    }
+    .container .user_details{
+        height: 500px;
+    }
+}
+@media screen and (max-width:580px) {
+    .container{
+        padding-left: 2%;
+    }
+    .container .user_details{
+        width: 100%;
+    }
+    .container .wallet{
+        width: 100%;
     }
 }
 
