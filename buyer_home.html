@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="bva.css">
+   <link rel="stylesheet" href="buyer_home.css">
 </head>
 <body>
 
     <div class="nav">
         <div class="menu" id="menu">
             <ul>
-                <li><a href="#" id="active"><i class="fa fa-user-circle fa-xl"></i><span>Account</span></a></li>
+                <li><a href="#" id="active"><i class="fa fa-home fa-xl"></i><span>Home</span></a></li>
+                <li><a href="#"><i class="fa fa-user-circle fa-xl"></i><span>View Account</span></a></li>
                 <li><a href="#" ><i class="fa fa-cart-arrow-down fa-xl"></i><span>Purchases</span></a></li>
                 <li><a href="#"><i class="fa fa-comments fa-xl"></i><span>Feedback</span></a></li>
                 <li><a href="#"><i class="fa fa-sign-out fa-xl"></i><span>Log Out</span></a></li>
@@ -236,6 +237,12 @@
         </div>
     </div>
     </center>
-    <script src="bva.js"></script>
+    <div class="choices" id="choicem">
+        <a class="fa fa-caret-square-o-left" id="choice" onclick="choice()"></a>
+        <a><i class="fa fa-book"></i><span>Note Books</span></a>
+        <a><i class="fa fa-mortar-board"></i><span>Text Books</span></a>
+        <a><i class="fa fa-rocket"></i><span>Fiction Books</span></a>
+    </div>
+    <script src="buyer_home.js"></script>
 </body>
 </html>
