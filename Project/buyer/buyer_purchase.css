@@ -58,6 +58,34 @@ body{
 .nav .fa{
     font-size: 40px;
 }
+.container{
+    padding-top: 10%;
+    padding-bottom: 2%;
+}
+.container table{
+    width: 85%;
+    border-collapse: collapse;
+}
+.container table th{
+    background-color: orange;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 2%;
+    width: 20%;
+    border: 2px solid wheat;
+}
+.container table td{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: whitesmoke;
+    border: 2px solid orange;
+}
+.container table td img{
+    width: 150px;
+    height: 200px;
+    margin: 2%;
+}
 
 
 @media screen and (max-width:1015px) {
@@ -93,7 +121,28 @@ body{
         animation: slide;
         animation-duration: 1s;
     }
+    .container table{
+        width: 95%;
+    }
 }
+@media screen and (max-width:890px) {
+    .container table td img{
+        width: 100px;
+        height: 150px;
+    }
+}
+@media screen and (max-width:820px) {
+    .container {
+        overflow-x:scroll;
+        padding-top: 20%;
+    }
+    .container table{
+        width: 820px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
 
 @keyframes dropup {
     0%   {opacity:0; transform: translate(0,-200px);}
