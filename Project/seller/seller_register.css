@@ -15,7 +15,6 @@ body .content{
 .content h2 {
 	color: #fff;
 	font-size: 6em;
-    text-align: left;
 	position: absolute;
 	transform: translate(0%, 100);
 }
