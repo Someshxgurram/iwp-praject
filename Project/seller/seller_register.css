@@ -6,7 +6,8 @@
 }
 body .content{
 	display: flex;
-	justify-content:center;
+    position: fixed;
+	justify-content:left;
 }
 .content {
 	position: relative;
@@ -14,7 +15,7 @@ body .content{
 .content h2 {
 	color: #fff;
 	font-size: 6em;
-    text-align: center;
+    text-align: left;
 	position: absolute;
 	transform: translate(0%, 100);
 }
@@ -69,10 +70,9 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    padding: 10%;
+    padding: 2% 10%;
 }
-.login{
+.register{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,7 +88,7 @@ body{
     border-radius: 10px;
    padding:3% 0%;
 }
-.login input{
+.register input{
     width: 250px;
     height: 35px;
     border: none;
@@ -99,9 +99,9 @@ body{
     padding-bottom: 6px;
     font-weight: bold;
     margin-bottom: 10px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
-.login button{
+.register button{
     width: 260px;
     height: 36px;
     background:  #F17119;
@@ -112,53 +112,67 @@ body{
     margin-top: 40px;
     margin-bottom: 40px;
 }
-.login button:hover{
+.register button:hover{
     transform: scaleY(1.1);
 }
-.register{
+.login{
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 40px;
 }
-.register p{
+.login p{
     font-weight: 100;
 }
-.register a{
+.login a{
     margin-left: 10px;
     text-decoration: none;
     color: #F17119;
     transition: 0.5s;
 }
-.register a:hover{
+.login a:hover{
     transform: scaleX(1.1);
 }
-
-@media screen and (max-width:986px) {
-    .login{
+@media screen and (max-width:1116px) {
+    .register {
         width: 50%;
+        padding: 10%;
+    }
+}
+@media screen and (max-width:986px) {
+    .register{
+        width: 55%;
         padding: 12%;
     }
 }
 
 @media screen and (max-width:800px) {
-    .login{
+    .register{
         width: 60%;
-    }
-}
-@media screen and (max-width:705px) {
-    .login{
         padding: 14%;
     }
 }
+@media screen and (max-width:731px) {
+    .register{
+        padding: 15%;
+        width: 65%;
+    }
+}
+@media screen and (max-width:684px) {
+    .register{
+        padding: 18%;
+        width: 70%;
+    }
+}
 @media screen and (max-width:650px) {
-    .login{
+    .register{
         width: 80%;
         padding: 20%;
     }
 }
-@media screen and (max-width:520px) {
-    .login{
+@media screen and (max-width:526px) {
+    .register{
         width: 100%;
+        padding: 30%;
     }
 }
