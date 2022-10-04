@@ -161,6 +161,15 @@ body{
 .register a:hover{
     transform: scaleX(1.1);
 }
+.home a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: #F17119;
+    transition: 0.5s;
+}
+.home a:hover{
+    transform: scaleX(1.1);
+}
 @media screen and (max-width:1177px) {
     .login{
         width:50%;
