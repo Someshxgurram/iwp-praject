@@ -7,7 +7,6 @@
 body .content{
 	display: flex;
     position: fixed;
-	justify-content:left;
 }
 .content {
 	position: relative;
@@ -21,11 +20,12 @@ body .content{
 
 .content h2:nth-child(1) {
 	color: transparent;
-	-webkit-text-stroke: 2px #03a9f4;
+	-webkit-text-stroke: 2px #F17119;
+    ;
 }
 
 .content h2:nth-child(2) {
-	color: #03a9f4;
+	color: #F17119;
 	animation: animate 4s ease-in-out infinite;
 }
 
