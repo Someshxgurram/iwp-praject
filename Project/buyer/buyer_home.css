@@ -66,6 +66,7 @@ body{
     grid-row-gap: 60px;
     padding-top: 10%;
     padding-bottom: 3%;
+    justify-items: center;
 }
 
 .card {
