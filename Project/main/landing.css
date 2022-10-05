@@ -19,9 +19,11 @@ h6{
     color: orange;
     margin-bottom: 3%;
 }
-button{
+a{
     border: none;
     background-color: orange;
+    text-decoration: none;
+    color: black;
     padding: 1%;
     display: flex;
     flex-direction: row;
@@ -32,14 +34,14 @@ button{
     transition: transform 0.5s;
     cursor:pointer;
 }
-button:hover{
+a:hover{
     transform: scaleX(1.02);
 }
-button img{
+a img{
     width: 40px;
     margin-right: 20px;
 }
-button p{
+a p{
     font-size: 24px;
     font-weight: 600;
 }
@@ -55,7 +57,7 @@ button p{
     h6{
         width: 85%;
     }
-    button{
+    a{
         width: 60%;
     }
 }
@@ -63,7 +65,7 @@ button p{
     h6{
         width: 95%;
     }
-    button{
+    a{
         width: 80%;
     }
 }
