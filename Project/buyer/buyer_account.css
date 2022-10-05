@@ -1,217 +1,242 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-body{
-    background-color: #2C3A47;
+body {
+  background-color: #827397;
 }
-.nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: orange;
-    position: fixed;
-    top: 0;
-    z-index: 5;
-    width: 100%;
-    padding: 1%;
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e9d5ca;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  padding: 1%;
 }
 
-.nav .menu ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    animation: position;
-    animation-duration: 1s;
+.nav .menu ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  animation: position;
+  animation-duration: 1s;
 }
-.nav .menu ul li{
-    list-style: none;
-    margin-left: 70px;
+.nav .menu ul li {
+  list-style: none;
+  margin-left: 70px;
 }
-.nav .menu ul li a{
-    text-decoration: none;
-    color: #000;
+.nav .menu ul li a {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nav .menu ul li a span {
+  font-size: 20px;
+  font-weight: 400;
+  display: none;
+  animation: dropup;
+  animation-duration: 1s;
+}
+.nav .menu ul li a:hover > span {
+  display: block;
+}
+.nav .menu ul li a#active span {
+  display: block;
+}
+.nav .bar {
+  display: none;
+}
+.nav .fa {
+  font-size: 40px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 10% 3% 2%;
+}
+.container .user_details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  background-color: #4d4c7d;
+  height: 550px;
+}
+.container .user_details .display {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+  margin: 5%;
+}
+.container .user_details .display p {
+  font-size: 20px;
+  font-weight: 600;
+}
+.container .user_details .display .fa {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+.container .user_details hr {
+  width: 90%;
+  border: 1px solid black;
+}
+
+.container .wallet {
+  background-color: #4d4c7d;
+  width: 90%;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container .wallet h1 {
+  margin-bottom: 5%;
+}
+.container .wallet p {
+  margin-bottom: 5%;
+  padding: 2% 5%;
+  color: whitesmoke;
+  font-size: 20px;
+  background-color: #363062;
+}
+.container .wallet .top_up {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  width: 30%;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
+.container .wallet .top_up button {
+  background-color: #363062;
+  color: whitesmoke;
+  padding: 10%;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid #2c3a47;
+}
+.container .wallet .top_up button:hover {
+  background: #ac7088;
+}
+
+@media screen and (max-width: 1015px) {
+  .nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
-}
-.nav .menu ul li a span{
-    font-size: 20px;
-    font-weight: 400;
+  }
+  .nav .bar {
+    display: block;
+    margin-right: -80%;
+  }
+  .nav .menu {
     display: none;
+  }
+  .nav .menu.res {
+    display: block;
     animation: dropup;
     animation-duration: 1s;
-}
-.nav .menu ul li a:hover > span{
-    display: block;
-}
-.nav .menu ul li a#active span{
-    display: block;
-}
-.nav .bar{
-    display: none;
-}
-.nav .fa{
-    font-size: 40px;
-}
-
-.container{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    align-items: center;
-    justify-content: center;
-    padding: 10% 3% 2%;
-}
-.container .user_details{
+  }
+  .nav .menu ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    background-color: orange;
-    height: 550px;
+  }
+  .nav .menu ul li {
+    margin-left: 0%;
+    margin-top: 20px;
+  }
+  .nav .menu.menu.res ul a span {
+    animation: slide;
+    animation-duration: 1s;
+  }
+  .container {
+    grid-template-columns: 100%;
+    grid-row-gap: 50px;
+    padding-left: 10%;
+  }
+  .container .user_details {
+    height: 700px;
+  }
 }
-.container .user_details .display{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 90%;
-    justify-content: space-between;
-    margin: 5%
+@media screen and (max-width: 800px) {
+  .container {
+    padding-top: 20%;
+  }
+  .container .user_details {
+    height: 500px;
+  }
 }
-.container .user_details .display p{
-    font-size: 20px;
-    font-weight: 600;
-}
-.container .user_details .display .fa{
-    font-size: 24px;
-    color: black;
-    cursor: pointer;
-}
-.container .user_details hr{
-    width: 90%;
-    border: 1px solid black;
-}
-
-
-.container .wallet{
-    background-color: orange;
-    width: 90%;
-    height: 550px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.container .wallet h1{
-    margin-bottom: 5%;
-}
-.container .wallet p{
-    margin-bottom: 5%;
-    padding: 2% 5%;
-    color: whitesmoke;
-    font-size: 20px;
-    background-color: #2C3A47;
-}
-.container .wallet .top_up{
-    display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    width: 30%;
-    grid-row-gap: 10px;
-    grid-column-gap:10px;
-}
-.container .wallet .top_up button{
-    background-color: #2C3A47;
-    color: whitesmoke;
-    padding: 10%;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 2px solid #2C3A47;
-}
-.container .wallet .top_up button:hover{
-    background: orange;
-}
-
-@media screen and (max-width:1015px) {
-    .nav{
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-    }
-    .nav .bar{
-        display: block;
-        margin-right: -80%;
-    }
-    .nav .menu{
-        display: none;
-    }
-    .nav .menu.res{
-        display: block;
-        animation: dropup;
-        animation-duration: 1s;
-    }
-    .nav .menu ul{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .nav .menu ul li{
-        margin-left: 0%;
-        margin-top: 20px;
-    }
-    .nav .menu.menu.res ul a span{
-        animation: slide;
-        animation-duration: 1s;
-    }
-    .container{
-        grid-template-columns: 100%;
-        grid-row-gap: 50px;
-        padding-left: 10%;
-    }
-    .container .user_details{
-        height: 700px;
-    }
-}
-@media screen and (max-width:800px) {
-    .container{
-        padding-top: 20%;
-    }
-    .container .user_details{
-        height: 500px;
-    }
-}
-@media screen and (max-width:580px) {
-    .container{
-        padding-left: 2%;
-    }
-    .container .user_details{
-        width: 100%;
-    }
-    .container .wallet{
-        width: 100%;
-    }
+@media screen and (max-width: 580px) {
+  .container {
+    padding-left: 2%;
+  }
+  .container .user_details {
+    width: 100%;
+  }
+  .container .wallet {
+    width: 100%;
+  }
 }
 
 @keyframes dropup {
-    0%   {opacity:0; transform: translate(0,-200px);}
-    100% {opacity:1; transform: translate(0,0);}
+  0% {
+    opacity: 0;
+    transform: translate(0, -200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 @-webkit-keyframes dropup {
-    0%   {opacity:0; transform: translate(0,-200px); }
-    100% {opacity:1; transform: translate(0,0);}
+  0% {
+    opacity: 0;
+    transform: translate(0, -200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 
 @keyframes slide {
-    0%   {opacity:0; transform: translate(-100px,0);}
-    100% {opacity:1; transform: translate(0,0);}
+  0% {
+    opacity: 0;
+    transform: translate(-100px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 @-webkit-keyframes slide {
-    0%   {opacity:0; transform: translate(-100px,0); }
-    100% {opacity:1; transform: translate(0,0);}
+  0% {
+    opacity: 0;
+    transform: translate(-100px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
