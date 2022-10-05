@@ -109,7 +109,7 @@ body {
 }
 
 .card:hover .img-div {
-  transform: translateY(-250px);
+  transform: translateY(-350px);
 }
 
 .img-div > img {
@@ -152,7 +152,7 @@ body {
 }
 
 .card:hover > .rating > li > a {
-  transform: translateY(0);
+  transform: translateY(-100px);
   opacity: 1;
 }
 
@@ -187,7 +187,7 @@ body {
   bottom: 0;
   left: 0;
   background-color: #fff;
-  height: 250px;
+  height: 350px;
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
@@ -212,7 +212,6 @@ body {
   border-radius: 10px;
   color: white;
   cursor: pointer;
-  margin-top: -40px;
 }
 .book-info > button:hover {
   color: #262626;
