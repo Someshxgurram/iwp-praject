@@ -15,6 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-light py-3 fixed-top">
         <div class="container">
+            <span>SecondPages</span>
           <img src="images/logo.png" class="logo" alt="logo">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span><i id="bar" class="uil uil-bars"></i></span>
@@ -25,13 +26,13 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Shop</a>
+                <a class="nav-link" href="/Project/buyer/buyer_login.html">Shop</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sell</a>
+                <a class="nav-link" href="/Project/seller/seller_login.html">Sell</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Donate</a>
+                <a class="nav-link" href="/Project/donor/donor_login.html">Donate</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
@@ -85,7 +86,7 @@
         <div class="container text-center mt-5 py-5">
             <h3>The Best Sellers</h3>
             <hr class="mx-auto">
-            <p>The Current Favourites of the Users</p>
+            <p>Current Favourites of the Users</p>
         </div>
         <div class="row mx-auto container-fluid">
             <div class="product text-center col-lg-3 col-md-4 col-12">
