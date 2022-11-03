@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +9,16 @@
     <link rel="stylesheet" href="buyer_account.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <div class="nav">
         <div class="menu" id="menu">
             <ul>
-                <li><a href="buyer_home.html"><i class="fa fa-home "></i><span>Home</span></a></li>
-                <li><a href="buyer_account.html" id="active"><i class="fa fa-user-circle "></i><span>Account</span></a></li>
-                <li><a href="buyer_purchase.html" ><i class="fa fa-cart-arrow-down "></i><span>Purchases</span></a></li>
-                <li><a href="buyer_feedback.html"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
-                <li><a href="buyer_login.html"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
+                <li><a href="buyer_home.php"><i class="fa fa-home "></i><span>Home</span></a></li>
+                <li><a href="buyer_account.php" id="active"><i class="fa fa-user-circle "></i><span>Account</span></a></li>
+                <li><a href="buyer_purchase.php"><i class="fa fa-cart-arrow-down "></i><span>Purchases</span></a></li>
+                <li><a href="buyer_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
+                <li><a href="buyer_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
             </ul>
         </div>
         <div class="bar">
@@ -67,4 +69,5 @@
     </div>
     <script src="buyer_account.js"></script>
 </body>
+
 </html>

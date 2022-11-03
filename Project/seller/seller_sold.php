@@ -14,11 +14,11 @@
     <div class="nav">
         <div class="menu" id="menu">
             <ul>
-                <li><a href="seller_list.html"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
-                <li><a href="seller_sold.html" id="active"><i class="fa fa-handshake-o "></i><span>Sold Items</span></a></li>
-                <li><a href="seller_add.html"><i class="fa fa-plus-square "></i><span>Add Items</span></a></li>
-                <li><a href="seller_feedback.html"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
-                <li><a href="seller_login.html"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
+                <li><a href="seller_list.php"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
+                <li><a href="seller_sold.php" id="active"><i class="fa fa-handshake-o "></i><span>Sold Items</span></a></li>
+                <li><a href="seller_add.php"><i class="fa fa-plus-square "></i><span>Add Items</span></a></li>
+                <li><a href="seller_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
+                <li><a href="seller_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
             </ul>
         </div>
         <div class="bar">
