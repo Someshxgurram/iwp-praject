@@ -1,3 +1,7 @@
+<?php
+include('../includes/connection.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,33 +33,70 @@
         <div class="user_details">
             <h1>Profile Details</h1>
             <div class="display">
-                <p>Siddharth30</p>
+                <?php
+                $query = "SELECT * from blogin where username = 'adit_n'";
+                $result = mysqli_query($conn, $query);
+                while ($row = $result->fetch_assoc()) {
+                    echo "<p>", $row['fname'], " ", $row['lname'], "</p>";
+                }
+                ?>
                 <a><i class="fa fa-edit"></i></a>
             </div>
             <hr>
             <div class="display">
-                <p>8179221768</p>
+                <?php
+                $query = "SELECT * from blogin where username = 'adit_n'";
+                $result = mysqli_query($conn, $query);
+                while ($row = $result->fetch_assoc()) {
+                    echo "<p>", $row['number'], "</p>";
+                }
+                ?>
                 <a><i class="fa fa-edit"></i></a>
             </div>
             <hr>
             <div class="display">
-                <p>siddharth30@gmail.com</p>
+                <?php
+                $query = "SELECT * from blogin where username = 'adit_n'";
+                $result = mysqli_query($conn, $query);
+                while ($row = $result->fetch_assoc()) {
+                    echo "<p>", $row['email'], "</p>";
+                }
+                ?>
                 <a><i class="fa fa-edit"></i></a>
             </div>
             <hr>
             <div class="display">
-                <p>30/10/2002</p>
+                <?php
+                $query = "SELECT * from blogin where username = 'adit_n'";
+                $result = mysqli_query($conn, $query);
+                while ($row = $result->fetch_assoc()) {
+                    echo "<p>", $row['dob'], "</p>";
+                }
+                ?>
                 <a><i class="fa fa-edit"></i></a>
             </div>
             <hr>
             <div class="display">
-                <p>3/4 , Chennai , Tamil Nadu - 60004</p>
+                <?php
+                $query = "SELECT * from blogin where username = 'adit_n'";
+                $result = mysqli_query($conn, $query);
+                while ($row = $result->fetch_assoc()) {
+                    echo "<p>", $row['aadhar'], "</p>";
+                }
+                ?>
                 <a><i class="fa fa-edit"></i></a>
             </div>
         </div>
         <div class="wallet">
             <h1>Available Balance</h1>
-            <p>1500</p>
+            <?php
+            $query = "SELECT * from blogin where username = 'adit_n'";
+            $result = mysqli_query($conn, $query);
+            while ($row = $result->fetch_assoc()) {
+                echo "<p id='wallet_amt'>", $row['wallet'], "</p>";
+            }
+            ?>
+
             <h1>Add To Wallet</h1>
             <div class="top_up">
                 <button>100</button>
