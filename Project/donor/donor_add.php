@@ -29,15 +29,16 @@ include('../includes/connection.php');
         </div>
     </div>
     <div class="container">
-        <div class="form">
+        <form action="#" method="POST" enctype="multipart/form-data">
             <h2>Enter The Book Details</h2>
             <input type="text" name="title" id="title" placeholder="Enter the title" required>
             <input type="text" name="desc" id="desc" placeholder="Enter the description">
+            <input type="text" name="desc" id="desc" placeholder="Enter the category">
             <p>Upload Book Image</p>
             <br>
             <input type="file" placeholder="Choose Image">
             <button>Add Item</button>
-        </div>
+        </form>
     </div>
     <script src="donor_add.js"></script>
 </body>
