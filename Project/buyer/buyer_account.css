@@ -126,7 +126,7 @@ body {
   grid-row-gap: 10px;
   grid-column-gap: 10px;
 }
-.container .wallet .top_up button {
+input[type=submit]{
   background-color: #363062;
   color: whitesmoke;
   padding: 10%;
@@ -134,7 +134,7 @@ body {
   cursor: pointer;
   border: 2px solid #2c3a47;
 }
-.container .wallet .top_up button:hover {
+input[type=submit]:hover {
   background: #ac7088;
 }
 
