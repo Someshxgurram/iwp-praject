@@ -29,15 +29,33 @@ include('../includes/connection.php');
         </div>
     </div>
     <div class="container">
-        <div class="form">
-            <h2>Enter The Material Details</h2>
-            <input type="text" name="title" id="title" placeholder="Enter the title" required>
-            <input type="text" name="desc" id="desc" placeholder="Enter the description">
-            <input type="text" placeholder="Enter the Price">
-            <p>Upload Material Image</p>
-            <input type="file" placeholder="Choose Image">
-            <button>Add Item</button>
+        <div>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <h2>Enter The Material Details</h2>
+                <input type="text" name="title" id="title" placeholder="Enter the title" required>
+                <input type="text" name="desc" id="desc" placeholder="Enter the description">
+                <input type="text" name="cat" id="cat" placeholder="Enter the category">
+                <input type="text" name="price" id="price" placeholder="Enter the Price">
+                <input type="submit" name="submit" value="Add Item">
+
+            </form>
         </div>
+        <?php
+
+        if (isset($_POST['submit'])) {
+
+            $item_name = $_POST['title'];
+            $item_desc = $_POST['desc'];
+            $item_cat = $_POST['cat'];
+            $item_price = $_POST['price'];
+            $insert_query = "INSERT INTO sproducts (item_name, item_desc, item_price, item_cat) VALUES ('$item_name', '$item_desc', '$item_price','$item_cat')";
+
+            $result_insert = mysqli_query($conn, $insert_query);
+
+            if ($result_insert) {
+                echo "<h2 id='addtion'>", $item_name, " has been added!</h2>";
+            }
+        } ?>
     </div>
     <script src="seller_add.js"></script>
 </body>

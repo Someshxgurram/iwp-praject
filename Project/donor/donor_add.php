@@ -29,16 +29,32 @@ include('../includes/connection.php');
         </div>
     </div>
     <div class="container">
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <form action="#" method="POST" name="donor_add" enctype="multipart/form-data">
             <h2>Enter The Book Details</h2>
             <input type="text" name="title" id="title" placeholder="Enter the title" required>
             <input type="text" name="desc" id="desc" placeholder="Enter the description">
-            <input type="text" name="desc" id="desc" placeholder="Enter the category">
+            <input type="text" name="cat" id="cat" placeholder="Enter the category">
             <p>Upload Book Image</p>
             <br>
             <input type="file" placeholder="Choose Image">
-            <button>Add Item</button>
+            <input type="submit" name="submit" value="Add Item">
         </form>
+        <?php
+
+        if (isset($_POST['submit'])) {
+
+
+            $item_name = $_POST['title'];
+            $item_desc = $_POST['desc'];
+            $item_cat = $_POST['cat'];
+            $insert_query = "INSERT INTO dproducts (item_name, item_desc, item_cat) VALUES ('$item_name', '$item_desc', '$item_cat')";
+
+            $result_insert = mysqli_query($conn, $insert_query);
+
+            if ($result_insert) {
+                echo "<h2 id='addtion'>", $item_name, " has been added!</h2>";
+            }
+        } ?>
     </div>
     <script src="donor_add.js"></script>
 </body>

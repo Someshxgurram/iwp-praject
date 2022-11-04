@@ -99,23 +99,23 @@ include('../includes/connection.php')
             <h1>Add To Wallet</h1>
             <div class="top_up">
                 <form action="" method="post">
-                    <input type="submit" value="100" name="adding"> 
+                    <input type="submit" value=100 name="adding">
                     <input type="submit" value=200 name="adding">
                     <input type="submit" value=300 name="adding">
-                    <input type="submit" value=400 name="adding"> 
+                    <input type="submit" value=400 name="adding">
                     <input type="submit" value=500 name="adding">
                     <input type="submit" value=600 name="adding">
                 </form>
             </div>
             <?php
-            if(isset($_POST['adding'])){
-                    $addnumber=$_POST['adding'];
-                    $my_sql_query = "UPDATE blogin SET wallet=wallet+$addnumber where username = 'adit_n'";
-                    if (mysqli_query($conn, $my_sql_query)) {
-                        header("Refresh:0");
-                    } else {
-                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                    }
+            if (isset($_POST['adding'])) {
+                $addnumber = $_POST['adding'];
+                $my_sql_query = "UPDATE blogin SET wallet=wallet+$addnumber where username = 'adit_n'";
+                if (mysqli_query($conn, $my_sql_query)) {
+                    header("Refresh:0");
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                }
             }
             ?>
         </div>

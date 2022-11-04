@@ -121,20 +121,22 @@ body {
 }
 .container .wallet .top_up {
   display: grid;
+  width: 40%;
   grid-template-columns: 33.33% 33.33% 33.33%;
-  width: 30%;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
 }
-input[type=submit]{
+input[type="submit"] {
   background-color: #363062;
-  color: whitesmoke;
+  color: white;
   padding: 10%;
   border-radius: 10px;
   cursor: pointer;
   border: 2px solid #2c3a47;
+  width: 50px;
+  height: 50px;
 }
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background: #ac7088;
 }
 
