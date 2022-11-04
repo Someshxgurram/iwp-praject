@@ -15,8 +15,3 @@ function responsive(){
     }
  
 }
-
-
-var wallet = document.getElementById('wallet');
-
-console.log(wallet);

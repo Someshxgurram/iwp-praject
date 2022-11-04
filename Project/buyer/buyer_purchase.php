@@ -1,5 +1,5 @@
 <?php
-include('./includes/connection.php')
+include('../includes/connection.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@ include('./includes/connection.php')
             <ul>
                 <li><a href="buyer_home.php"><i class="fa fa-home "></i><span>Home</span></a></li>
                 <li><a href="buyer_account.php"><i class="fa fa-user-circle "></i><span>View Account</span></a></li>
-                <li><a href="buyer_purchase.php" id="active"><i class="fa fa-cart-arrow-down "></i><span>Previous Purchases</span></a></li>
+                <li><a href="buyer_purchase.php" id="active"><i class="fa fa-cart-arrow-down "></i><span>Purchases</span></a></li>
                 <li><a href="buyer_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
                 <li><a href="buyer_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
             </ul>
@@ -37,33 +37,23 @@ include('./includes/connection.php')
                     <th style="width: 10%;">Price</th>
                     <th style="width: 10%;">Date</th>
                 </tr>
+                <?php
+                $query = "SELECT * from btransactions";
+                $result = mysqli_query($conn, $query);
+                while ($rows = $result->fetch_assoc()) {
+                ?>
+                    <tr>
+                        <td><?php echo $rows['product_name']; ?></td>
+                        <td><?php echo $rows['product_description']; ?></td>
+                        <td><?php echo $rows['price']; ?></td>
+                        <td><?php echo $rows['date']; ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
                 <tr>
                     <td>
-                        <p>hui</p>
-                    </td>
-                    <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quaerat, pariatur praesentium nulla odit cumque voluptate saepe magni nesciunt explicabo adipisci reiciendis eos cupiditate incidunt? Minus dignissimos perspiciatis nulla nihil?
-                    </td>
-                    <td>
-                        &#8377;600
-                    </td>
-                    <td>21/03/2022</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="./images/book2.jpeg" alt="book1">
-                    </td>
-                    <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quaerat, pariatur praesentium nulla odit cumque voluptate saepe magni nesciunt explicabo adipisci reiciendis eos cupiditate incidunt? Minus dignissimos perspiciatis nulla nihil?
-                    </td>
-                    <td>
-                        &#8377;800
-                    </td>
-                    <td>2/05/2022</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="./images/book3.jpeg" alt="book1">
+                        book name
                     </td>
                     <td>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quaerat, pariatur praesentium nulla odit cumque voluptate saepe magni nesciunt explicabo adipisci reiciendis eos cupiditate incidunt? Minus dignissimos perspiciatis nulla nihil?
