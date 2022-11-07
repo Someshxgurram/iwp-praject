@@ -8,6 +8,12 @@
 body {
   background-color: #827397;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
 .nav {
   display: flex;
   flex-direction: row;

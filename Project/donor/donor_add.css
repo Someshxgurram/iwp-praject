@@ -5,6 +5,15 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+::-webkit-scrollbar-track {
+  background: #e9d5ca;
+}
 body {
   background-color: #827397;
 }

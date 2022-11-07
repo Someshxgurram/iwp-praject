@@ -12,6 +12,15 @@ body {
   justify-content: center;
   background-color: #25316d;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+::-webkit-scrollbar-track {
+  background: #e9d5ca;
+}
 .container {
   position: relative;
   max-width: 430px;

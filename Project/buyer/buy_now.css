@@ -7,6 +7,15 @@
   body {
     background-color: #827397;
   }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+  }
+  ::-webkit-scrollbar-track {
+    background: #e9d5ca;
+  }
   .nav {
     display: flex;
     flex-direction: row;
@@ -84,6 +93,7 @@
     grid-template-columns: 40% 60%;
     width: 70%;
     margin-top: 10%;
+    margin-left: 5%;
     padding: 3%;
     background-color: #4d4c7d;
 }

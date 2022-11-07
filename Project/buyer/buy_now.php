@@ -29,7 +29,6 @@
             </ul>
         </div>
     </div>
-    <center>
     <div class="container">
         <div class="image">
             <img src="./images/book.jpeg" alt="book">
@@ -43,7 +42,6 @@
                 <input type="submit" value="Buy Now" name="buy">
             </form>
         </div>
-    </div>
-</center>  
+    </div> 
 </body>
 </html>

@@ -20,6 +20,15 @@ body {
   width: 100%;
   padding: 1%;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+::-webkit-scrollbar-track {
+  background: #e9d5ca;
+}
 .nav .title{
   display: flex;
   flex-direction: row;

@@ -10,7 +10,15 @@
   font-family: "Poppins", sans-serif;
   text-decoration: none;
 }
-
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+::-webkit-scrollbar-track {
+  background: #e9d5ca;
+}
 .main {
   padding-top: 10%;
   font-size: 14px;
