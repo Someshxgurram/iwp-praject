@@ -14,22 +14,35 @@ include('../includes/connection.php');
 </head>
 
 <body>
+    
     <div class="nav">
+        <div class="title">
+            <div class="logo">
+                <h1>SecondPages</h1>
+                <img src="images/logo.png" class="logo" alt="logo">
+            </div>
+            <div class="bar">
+                <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
+        </div>
+        </div>
         <div class="menu" id="menu">
             <ul>
-                <li><a href="seller_list.php" id="active"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
+            <li><a href="seller_list.php" ><i class="fa fa-list "></i><span>Listed Items</span></a></li>
                 <li><a href="seller_sold.php"><i class="fa fa-handshake-o "></i><span>Sold Items</span></a></li>
                 <li><a href="seller_add.php"><i class="fa fa-plus-square"></i><span>Add Item</span></a></li>
                 <li><a href="seller_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
                 <li><a href="seller_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
             </ul>
         </div>
-        <div class="bar">
-            <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
-        </div>
     </div>
     <center>
-        <h1>Listed Items</h1>
+    <form action="" class="search">
+        <input type="text" placeholder="Search">
+        <input type="submit" class="fa" value="&#xf002;">
+    </form>
+</center>
+    <center>
+        <h1 class="h1">Listed Items</h1>
         <div class="container">
             <div class="card-conatiner">
                 <div class="card">
@@ -91,6 +104,27 @@ include('../includes/connection.php');
                     </div>
                 </div>
             </div>
+            <div class="card-conatiner">
+                <div class="card">
+                    <div class="img-div">
+                        <img src="./images/book3.jpeg" alt="book">
+                    </div>
+                    <ul class="rating">
+                        <li><a><i class="fa fa-star"></i></a></li>
+                        <li><a><i class="fa fa-star"></i></a></li>
+                        <li><a><i class="fa fa-star"></i></a></li>
+                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                        <li><a><i class="fa fa-star-o"></i></a></li>
+                    </ul>
+                    <div class="book-info">
+                        <h2>Maze Runner</h2>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
+                        <h2>&#8377;700</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </center>
     <script src="seller_list.js"></script>
 </body>

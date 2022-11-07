@@ -9,16 +9,16 @@
   transition: ease 0.2s;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-  font-size: 14px;
 }
 
 .main {
   padding-top: 10%;
+  font-size: 14px;
 }
 
 .container {
-  background: #d7c0ae;
-  color: #4b537c;
+  background: #4d4c7d;
+  color: black;
   width: 100%;
   max-width: 450px;
   padding: 40px;
@@ -46,17 +46,17 @@
   align-items: center;
 }
 .level {
-  background: #826f66;
+  background: #f5efe6;
   padding: 13px;
   border-radius: 7px;
-  border: solid 0.5px #e0e9fe;
+  border: solid 0.5px #f5efe6;
   cursor: pointer;
 }
 .level:hover {
-  box-shadow: #826f66 0 2px 5px;
+  box-shadow: #76549a 0 2px 5px;
 }
 .level:hover i {
-  color: #c69b7b;
+  color: #76549a;
 }
 .level i {
   font-size: 40px;
@@ -64,18 +64,18 @@
 
 .feedback-msg textarea {
   margin-top: 5px;
-  border: solid 2px #e0e9fe;
+  border: solid 2px #f5efe6;
   padding: 13px;
   border-radius: 7px;
   outline: none;
   font-size: 14px;
-  color: black;
+  color: #4b537c;
   font-weight: 500;
   letter-spacing: 1px;
   width: 100%;
   height: 80px;
   resize: none;
-  background-color: #c69b7b;
+  background-color: #f5efe6;
 }
 
 .agreement .checkbox {
@@ -85,10 +85,10 @@
   margin-bottom: 5px;
 }
 .agreement input {
-  accent-color: #c69b7b;
+  accent-color: #f5efe6;
 }
 .agreement a {
-  color: #c69b7b;
+  color: #f5efe6;
   font-size: 12px;
   font-weight: 600;
 }
@@ -103,7 +103,7 @@
   justify-content: end;
 }
 .buttons a {
-  background: white;
+  background: #f5efe6;
   color: #4b537c;
   width: 80px;
   padding: 10px;
@@ -114,7 +114,7 @@
   opacity: 0.9;
 }
 .buttons a:nth-child(1) {
-  background: #c69b7b;
+  background: #bface0;
   color: #f8faff;
 }
 
@@ -124,19 +124,35 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #3a3845;
+  background-color: #827397;
 }
 .nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #f7ccac;
+  background-color: #e9d5ca;
   position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
   padding: 1%;
+}
+.nav .title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+}
+.nav .title .logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.nav .title .logo img{
+  width: 30px;
 }
 
 .nav .menu ul {
@@ -162,33 +178,40 @@ body {
 .nav .menu ul li a span {
   font-size: 20px;
   font-weight: 400;
-  display: none;
-  animation: dropup;
+  visibility: hidden;
+  animation: slide;
   animation-duration: 1s;
 }
 .nav .menu ul li a:hover > span {
-  display: block;
+  visibility: visible;
+  animation: dropup;
+  animation-duration: 1s;
 }
 .nav .menu ul li a#active span {
-  display: block;
+  visibility: visible;
+  animation: dropup;
+  animation-duration: 1s; 
 }
 .nav .bar {
   display: none;
 }
 .nav .fa {
-  font-size: 40px;
+  font-size: 30px;
 }
-
 @media screen and (max-width: 1015px) {
   .nav {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+  .nav .title{
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 0px;
+  }
   .nav .bar {
     display: block;
-    margin-right: -80%;
   }
   .nav .menu {
     display: none;

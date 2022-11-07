@@ -6,11 +6,10 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #ac7088;
+  background-color: #827397;
 }
-
-h1 {
-  padding-top: 10%;
+.h1 {
+  margin-top: 1%;
   font-size: 100px;
   color: #deb6ab;
 }
@@ -19,12 +18,28 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #f5e8c7;
+  background-color: #e9d5ca;
   position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
   padding: 1%;
+}
+.nav .title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+}
+.nav .title .logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.nav .title .logo img{
+  width: 30px;
 }
 
 .nav .menu ul {
@@ -50,26 +65,60 @@ h1 {
 .nav .menu ul li a span {
   font-size: 20px;
   font-weight: 400;
-  display: none;
-  animation: dropup;
+  visibility: hidden;
+  animation: slide;
   animation-duration: 1s;
 }
 .nav .menu ul li a:hover > span {
-  display: block;
+  visibility: visible;
+  animation: dropup;
+  animation-duration: 1s;
 }
 .nav .menu ul li a#active span {
-  display: block;
+  visibility: visible;
+  animation: dropup;
+  animation-duration: 1s; 
 }
 .nav .bar {
   display: none;
 }
 .nav .fa {
-  font-size: 40px;
+  font-size: 30px;
 }
-
+.search{
+  margin-top: 10% ;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.2);
+}
+.search input[type="text"]{
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 5px 20px;
+  font-size: 20px;
+  color: #4d4c7d;
+}
+.search input::placeholder{
+  color: #4d4c7d;
+}
+.search input[type="submit"]{
+  border: 0;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background: #4d4c7d;
+  cursor: pointer;
+}
 .container {
   display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-columns: 25% 25% 25% 25%;
+  /* grid-template-columns: 33.33% 33.33% 33.33%; */
   width: 100%;
   grid-row-gap: 60px;
   padding-top: 5%;
@@ -79,8 +128,8 @@ h1 {
 
 .card {
   position: relative;
-  height: 450px;
-  width: 350px;
+  height: 350px;
+  width: 270px;
   overflow: hidden;
   /* box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
     transition: box-shadow 0.3s ease-out;
@@ -115,7 +164,7 @@ h1 {
 }
 
 .card:hover .img-div {
-  transform: translateY(-250px);
+  transform: translateY(-300px);
 }
 
 .img-div > img {
@@ -132,7 +181,7 @@ h1 {
   display: flex;
   position: absolute;
   left: 50%;
-  top: 35%;
+  top: 8%;
   transform: translate(-50%, -50%);
   z-index: 3;
   margin: 0;
@@ -145,8 +194,8 @@ h1 {
 
 .rating > li > a {
   display: block;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   background-color: #fff;
   text-align: center;
   color: #262626;
@@ -163,9 +212,10 @@ h1 {
 }
 
 .rating > li > a > .fa {
-  font-size: 24px;
-  line-height: 50px;
+  font-size: 20px;
+  line-height: 40px;
   transition: transform 0.3s ease-out;
+  color: gold;
 }
 
 .card:hover .rating li:nth-child(1) a {
@@ -193,7 +243,7 @@ h1 {
   bottom: 0;
   left: 0;
   background-color: #ecccb2;
-  height: 250px;
+  height: 300px;
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
@@ -208,6 +258,7 @@ h1 {
 .book-info > span {
   color: #262626;
   font-size: 16px;
+  text-align: justify;
 }
 .book-info > button {
   padding: 5px 10px;
@@ -228,26 +279,33 @@ h1 {
 
 @media screen and (max-width: 1400px) {
   .container {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33.33% 33.33% 33.33%;
   }
-  h1 {
-    padding-top: 15%;
+  .h1 { 
     font-size: 70px;
   }
+  .search{
+    margin-top: 15%;
+  }
+  
 }
 @media screen and (max-width: 1015px) {
   .container {
-    grid-template-columns: 100%;
+    grid-template-columns: 50% 50%;
   }
   .nav {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+  .nav .title{
+    justify-content: space-between;
+    width: 90%;
+    margin-top: -10px;
+  }
   .nav .bar {
     display: block;
-    margin-right: -80%;
   }
   .nav .menu {
     display: none;
@@ -274,8 +332,20 @@ h1 {
 }
 @media screen and (max-width: 780px) {
   .h1 {
-    padding-top: 30%;
     font-size: 40px;
+  }
+  .container {
+    grid-template-columns: 100%;
+  }
+  .search{
+    margin-top: 18%;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 430px) {
+  .search{
+    margin-top: 22%;
+    width: 95%;
   }
 }
 

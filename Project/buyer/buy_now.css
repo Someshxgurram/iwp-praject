@@ -1,0 +1,200 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    background-color: #827397;
+  }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e9d5ca;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    padding: 1%;
+  }
+  .nav .title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+  }
+  .nav .title .logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav .title .logo img{
+    width: 30px;
+  }
+  .nav .menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    animation: position;
+    animation-duration: 1s;
+  }
+  .nav .menu ul li {
+    list-style: none;
+    margin-left: 70px;
+  }
+  .nav .menu ul li a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav .menu ul li a span {
+    font-size: 20px;
+    font-weight: 400;
+    visibility: hidden;
+    animation: slide;
+    animation-duration: 1s;
+  }
+  .nav .menu ul li a:hover > span {
+    visibility: visible;
+    animation: dropup;
+    animation-duration: 1s;
+  }
+  .nav .menu ul li a#active span {
+    visibility: visible;
+    animation: dropup;
+    animation-duration: 1s; 
+  }
+  .nav .bar {
+    display: none;
+  }
+  .nav .fa {
+    font-size: 30px;
+  }
+ 
+.container{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 70%;
+    margin-top: 10%;
+    padding: 3%;
+    background-color: #4d4c7d;
+}
+.container .image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container .image img{
+    width: 350px;
+    height: 450px;
+    border-radius: 10px;
+}
+.container .details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: wheat;
+    padding-left: 20px;
+}
+.container .details h1{
+    margin-bottom: 30px;
+}
+.container .details p{
+    margin-top: -10px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+}
+.container .details input[type="submit"]{
+    background-color: #363062;
+    padding: 10%;
+    border-radius: 10px;
+    color: wheat;
+    cursor: pointer;
+    border: 2px solid #2c3a47;
+    padding: 5px 10px;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.container .details input[type="submit"]:hover{
+    background: #ac7088;
+}
+@media screen and (max-width:1400px) {
+    .container{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 1015px) {
+    .nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav .title{
+      justify-content: space-between;
+      width: 90%;
+      margin-top: 0px;
+    }
+    .nav .bar {
+      display: block;
+    }
+    .nav .menu {
+      display: none;
+    }
+    .nav .menu.res {
+      display: block;
+      animation: dropup;
+      animation-duration: 1s;
+    }
+    .nav .menu ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav .menu ul li {
+      margin-left: 0%;
+      margin-top: 20px;
+    }
+    .nav .menu.menu.res ul a span {
+      animation: slide;
+      animation-duration: 1s;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15%;
+    }
+    .container .image{
+        margin-top: 30px;
+    }
+    .container .details{
+        margin-top: 30px;
+    }
+    .container .details form{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  @media screen and (max-width:550px) {
+    .container .image img{
+        width: 250px;
+        height: 300px;
+    }
+  }

@@ -15,18 +15,24 @@ include('../includes/connection.php')
 </head>
 
 <body>
-    <div class="nav">
+<div class="nav">
+        <div class="title">
+            <div class="logo">
+                <h1>SecondPages</h1>
+                <img src="images/logo.png" class="logo" alt="logo">
+            </div>
+            <div class="bar">
+                <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
+            </div>
+        </div>
         <div class="menu" id="menu">
             <ul>
-                <li><a href="buyer_home.php"><i class="fa fa-home "></i><span>Home</span></a></li>
-                <li><a href="buyer_account.php" id="active"><i class="fa fa-user-circle "></i><span>Account</span></a></li>
+                <li><a href="buyer_home.php" ><i class="fa fa-home "></i><span>Home</span></a></li>
+                <li><a href="buyer_account.php"><i class="fa fa-user-circle "></i><span>Account</span></a></li>
                 <li><a href="buyer_purchase.php"><i class="fa fa-cart-arrow-down "></i><span>Purchases</span></a></li>
                 <li><a href="buyer_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
                 <li><a href="buyer_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
             </ul>
-        </div>
-        <div class="bar">
-            <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
         </div>
     </div>
     <div class="container">
@@ -97,8 +103,7 @@ include('../includes/connection.php')
             }
             ?>
             <h1>Add To Wallet</h1>
-            <div class="top_up">
-                <form action="" method="post">
+                <form action="" method="post" class="top_up">
                     <input type="submit" value=100 name="adding">
                     <input type="submit" value=200 name="adding">
                     <input type="submit" value=300 name="adding">
@@ -106,7 +111,6 @@ include('../includes/connection.php')
                     <input type="submit" value=500 name="adding">
                     <input type="submit" value=600 name="adding">
                 </form>
-            </div>
             <?php
             if (isset($_POST['adding'])) {
                 $addnumber = $_POST['adding'];

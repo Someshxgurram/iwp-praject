@@ -17,11 +17,11 @@ function responsive(){
 }
 function choice(){
     var y = document.getElementById("choice");
-    if (y.className === "fa fa-caret-square-o-left") {
-        y.className = "fa fa-caret-square-o-right";
+    if (y.className === "fa fa-caret-square-o-right") {
+        y.className = "fa fa-caret-square-o-left";
     }
     else {
-        y.className = "fa fa-caret-square-o-left";
+        y.className = "fa fa-caret-square-o-right";
     }
     var x=document.getElementById("choicem");
     if (x.className==="choices"){

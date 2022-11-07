@@ -16,19 +16,31 @@ include('../includes/connection.php')
 <body>
 
     <div class="nav">
+        <div class="title">
+            <div class="logo">
+                <h1>SecondPages</h1>
+                <img src="images/logo.png" class="logo" alt="logo">
+            </div>
+            <div class="bar">
+                <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
+            </div>
+        </div>
         <div class="menu" id="menu">
             <ul>
-                <li><a href="buyer_home.php" id="active"><i class="fa fa-home "></i><span>Home</span></a></li>
-                <li><a href="buyer_account.php"><i class="fa fa-user-circle "></i><span>View Account</span></a></li>
-                <li><a href="buyer_purchase.php"><i class="fa fa-cart-arrow-down "></i><span>Previos Purchases</span></a></li>
+                <li><a href="buyer_home.php" ><i class="fa fa-home "></i><span>Home</span></a></li>
+                <li><a href="buyer_account.php"><i class="fa fa-user-circle "></i><span>Account</span></a></li>
+                <li><a href="buyer_purchase.php"><i class="fa fa-cart-arrow-down "></i><span>Purchases</span></a></li>
                 <li><a href="buyer_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
                 <li><a href="buyer_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
             </ul>
         </div>
-        <div class="bar">
-            <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
-        </div>
     </div>
+    <center>
+    <form action="" class="search">
+        <input type="text" placeholder="Search">
+        <input type="submit" class="fa" value="&#xf002;">
+    </form>
+</center>
     <center>
         <div class="container">
             <div class="card-conatiner">
@@ -47,7 +59,7 @@ include('../includes/connection.php')
                         <h2>Percy Jackson</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;600</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +79,7 @@ include('../includes/connection.php')
                         <h2>Harry Potter</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;800</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -87,7 +99,7 @@ include('../includes/connection.php')
                         <h2>Maze Runner</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;700</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +119,7 @@ include('../includes/connection.php')
                         <h2>Harry Potter</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;700</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -127,7 +139,7 @@ include('../includes/connection.php')
                         <h2>Maze Runner</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;800</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -147,7 +159,7 @@ include('../includes/connection.php')
                         <h2>Percy Jackson</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;700</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -167,7 +179,7 @@ include('../includes/connection.php')
                         <h2>Maze Runner</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;700</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -187,7 +199,7 @@ include('../includes/connection.php')
                         <h2>Percy Jackson</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;600</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -207,7 +219,7 @@ include('../includes/connection.php')
                         <h2>Harry Potter</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;800</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -227,7 +239,7 @@ include('../includes/connection.php')
                         <h2>Percy Jackson</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;700</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -248,14 +260,14 @@ include('../includes/connection.php')
                         <h2>Harry Potter</h2>
                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
                         <h2>&#8377;600</h2>
-                        <br> <button>Buy Now</button>
+                        <br> <a href="buy_now.php">Buy Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </center>
     <div class="choices" id="choicem">
-        <a class="fa fa-caret-square-o-left" id="choice" onclick="choice()"></a>
+        <a class="fa fa-caret-square-o-right" id="choice" onclick="choice()"></a>
         <a><i class="fa fa-book"></i><span>Non-Fiction</span></a>
         <a><i class="fa fa-mortar-board"></i><span>Study Materials</span></a>
         <a><i class="fa fa-rocket"></i><span>Fiction</span></a>

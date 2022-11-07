@@ -15,20 +15,26 @@ include('../includes/connection.php')
 </head>
 
 <body>
-  <div class="nav">
-    <div class="menu" id="menu">
-      <ul>
-        <li><a href="buyer_home.php"><i class="fa fa-home "></i><span>Home</span></a></li>
-        <li><a href="buyer_account.php"><i class="fa fa-user-circle "></i><span>View Account</span></a></li>
-        <li><a href="buyer_purchase.php"><i class="fa fa-cart-arrow-down "></i><span>Previous Purchases</span></a></li>
-        <li><a href="buyer_feedback.php" id="active"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
-        <li><a href="buyer_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
-      </ul>
+<div class="nav">
+        <div class="title">
+            <div class="logo">
+                <h2>SecondPages</h2>
+                <img src="images/logo.png" class="logo" alt="logo">
+            </div>
+            <div class="bar">
+                <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
+            </div>
+        </div>
+        <div class="menu" id="menu">
+            <ul>
+                <li><a href="buyer_home.php" ><i class="fa fa-home "></i><span>Home</span></a></li>
+                <li><a href="buyer_account.php"><i class="fa fa-user-circle "></i><span>Account</span></a></li>
+                <li><a href="buyer_purchase.php"><i class="fa fa-cart-arrow-down "></i><span>Purchases</span></a></li>
+                <li><a href="buyer_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
+                <li><a href="buyer_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
+            </ul>
+        </div>
     </div>
-    <div class="bar">
-      <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
-    </div>
-  </div>
   <div class="main">
     <form class="container">
       <h1 class="heading">Give feedback</h1>
