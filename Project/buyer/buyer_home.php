@@ -51,12 +51,12 @@ session_start();
     ?>
     <center>
         <div class="container">
-        <?php
+            <?php
 
-        $book_query = "SELECT * from bproducts";
-        $result = mysqli_query($conn, $book_query);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+            $book_query = "SELECT * from bproducts";
+            $result = mysqli_query($conn, $book_query);
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="card-conatiner">
                         <div class="card">
                             <form action="" method="POST">
@@ -70,26 +70,28 @@ session_start();
                                     <li><a><i class="fa fa-star-half-empty"></i></a></li>
                                     <li><a><i class="fa fa-star-o"></i></a></li>
                                 </ul>
-                                <div class="book-info">';   
-                                    echo "<h2>".$row['item_name']. "</h2>";
-                                    echo "<span>".$row['item_desc']. "</span>";
-                                    echo "<h2>". $row['item_price']. "</h2>";
-                                    echo '<br>
-                                    <a href="buy_now.php">Buy Now</a>
+                                <div class="book-info">';
+                    echo "<h2>" . $row['item_name'] . "</h2>";
+                    echo "<span>" . $row['item_desc'] . "</span>";
+                    echo "<h2>" . $row['item_price'] . "</h2>";
+                    echo '<br>
+                                    <a href="buy_now.php?item_name=';
+                    echo $row['item_name'];
+                    echo '"name="submit">Buy Now</a>
                             </form>';
-                            if (isset($_POST['submit'])) {
-                                $book = $_POST['book_name'];
-                                $_SESSION['book'] = $book;
-                                header('location:buy_now.php');
-                            }
-                        echo '</div>
+                    // if (isset($_POST['submit'])) {
+                    //     $book = $_POST['book_name'];
+                    //     $_SESSION['book'] = $book;
+                    //     header('location:buy_now.php');
+                    // }
+                    echo '</div>
                     </div>
                 </div>';
+                }
             }
-        }
-        
 
-        ?>
+
+            ?>
         </div>
     </center>
     <div class="choices" id="choicem">

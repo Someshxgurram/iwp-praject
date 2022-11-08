@@ -50,7 +50,7 @@ session_start();
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<h1>", $row['item_name'], "</h1>";
                     $price = $row['item_price'];
-                    echo "<h1>", $row['item_price'], "</h1>";
+                    echo "<h1> &#8377;", $row['item_price'], "</h1>";
                     echo "<h1> Description </h1>";
                     echo "<p>", $row['item_desc'], "</p>";
                 }
@@ -58,19 +58,24 @@ session_start();
                 echo "<h1> Not Possible </h1>";
             }
             ?>
-            <form action="">
-                <input type="submit" value="Buy Now" name="buy">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <input type="submit" value="Buy Now" name="submit">
             </form>
             <?php
-            if (isset($_POST['submit'])) {
-                $username = $_SESSION['username'];
-                $update_query = "SELECT * from blogin where name = '$username'";
+            if (isset($_GET['submit'])) {
+
+                $username = $_GET['item_name'];
+                $update_query = "SELECT * from blogin where username = '$item_name'";
                 $update_result = mysqli_query($conn, $update_query);
                 $update_row = mysqli_fetch_array($update_result);
+
                 $wallet_current = $update_row['wallet'];
+                echo "<h2>", $wallet_current, "</h2>";
                 $wallet_update = $wallet_current - $price;
-                $buy_query = "UPDATE blogin SET wallet = $price";
+
+                $buy_query = "UPDATE blogin SET wallet = $wallet_update where username = '$username'";
                 $wallet_result = mysqli_query($conn, $buy_query);
+
                 header('location:buyer_home.php');
             }
             ?>

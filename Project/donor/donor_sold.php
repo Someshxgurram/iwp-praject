@@ -43,7 +43,7 @@ session_start();
     </center>
     <center>
         <?php
-        $donor_query = "SELECT * FROM dproducts";
+        $donor_query = "SELECT * FROM dproducts where not customer='none' and donor = '$_SESSION[username]'";
         $donor_result = mysqli_query($conn, $donor_query);
         while ($row = mysqli_fetch_assoc($donor_result)) {
         ?>

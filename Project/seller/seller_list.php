@@ -1,5 +1,6 @@
 <?php
 include('../includes/connection.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@ include('../includes/connection.php');
 </head>
 
 <body>
-    
+
     <div class="nav">
         <div class="title">
             <div class="logo">
@@ -23,11 +24,11 @@ include('../includes/connection.php');
             </div>
             <div class="bar">
                 <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
-        </div>
+            </div>
         </div>
         <div class="menu" id="menu">
             <ul>
-            <li><a href="seller_list.php" ><i class="fa fa-list "></i><span>Listed Items</span></a></li>
+                <li><a href="seller_list.php"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
                 <li><a href="seller_sold.php"><i class="fa fa-handshake-o "></i><span>Sold Items</span></a></li>
                 <li><a href="seller_add.php"><i class="fa fa-plus-square"></i><span>Add Item</span></a></li>
                 <li><a href="seller_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
@@ -36,95 +37,42 @@ include('../includes/connection.php');
         </div>
     </div>
     <center>
-    <form action="" class="search">
-        <input type="text" placeholder="Search">
-        <input type="submit" class="fa" value="&#xf002;">
-    </form>
-</center>
+        <form action="" class="search">
+            <input type="text" placeholder="Search">
+            <input type="submit" class="fa" value="&#xf002;">
+        </form>
+    </center>
     <center>
         <h1 class="h1">Listed Items</h1>
-        <div class="container">
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Percy Jackson</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;600</h2>
+        <?php
+        $seller_query = "SELECT * FROM sproducts where customer='none' and seller = '$_SESSION[username]'";
+        $seller_result = mysqli_query($conn, $seller_query);
+        while ($row = mysqli_fetch_assoc($seller_result)) {
 
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book2.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Harry Potter</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;800</h2>
+            echo "<div class='container'>
+            <div class='card-conatiner'>
+                <div class='card'>
+                <div class='img-div'>";
 
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book3.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Maze Runner</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;700</h2>
+            echo "<img src='./images/BOOKS COVER'", $row['item_name'], "alt='book1'>";
 
-                    </div>
-                </div>
+            echo "      </div>
+            <ul class='rating'>
+                <li><a><i class='fa fa-star'></i></a></li>
+                <li><a><i class='fa fa-star'></i></a></li>
+                <li><a><i class='fa fa-star'></i></a></li>
+                <li><a><i class='fa fa-star-half-empty'></i></a></li>
+                <li><a><i class='fa fa-star-o'></i></a></li>
+            </ul>
+            <div class='book-info'>";
+            echo "<h2>", $row['item_name'], "</h2>";
+            echo "<span>", $row['item_desc'], "</span>";
+            echo "  </div>
             </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book3.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Maze Runner</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;700</h2>
-
-                    </div>
-                </div>
             </div>
-        </div>
+            </div>";
+        }
+        ?>
     </center>
     <script src="seller_list.js"></script>
 </body>

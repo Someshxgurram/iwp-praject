@@ -1,5 +1,6 @@
 <?php
 include('../includes/connection.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,55 +44,32 @@ include('../includes/connection.php');
     <center>
         <h1 class="h1">Listed Items</h1>
         <?php
-        $donor_query = "SELECT * FROM dproducts where customer='none'";
+        $donor_query = "SELECT * FROM dproducts where customer='none' and donor = '$_SESSION[username]'";
         $donor_result = mysqli_query($conn, $donor_query);
         while ($row = mysqli_fetch_assoc($donor_result)) {
-        ?>
-            <div class="container">
-                <div class="card-conatiner">
-                    <div class="card">
-                        <div class="img-div">
-                            <?php
-                            echo "<img src='./images/BOOKS COVER'", $row['item_name'], "alt='book1'>";
-                            ?>
-                        </div>
-                        <ul class="rating">
-                            <li><a><i class="fa fa-star"></i></a></li>
-                            <li><a><i class="fa fa-star"></i></a></li>
-                            <li><a><i class="fa fa-star"></i></a></li>
-                            <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                            <li><a><i class="fa fa-star-o"></i></a></li>
-                        </ul>
-                        <div class="book-info">
-                            <?php
-                            echo "<h2>", $row['item_name'], "</h2>";
-                            echo "<span>", $row['item_desc'], "</span>";
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-conatiner">
-                    <div class="card">
-                        <div class="img-div">
-                            <img src="./images/book2.jpeg" alt="book">
-                        </div>
-                        <ul class="rating">
-                            <li><a><i class="fa fa-star"></i></a></li>
-                            <li><a><i class="fa fa-star"></i></a></li>
-                            <li><a><i class="fa fa-star"></i></a></li>
-                            <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                            <li><a><i class="fa fa-star-o"></i></a></li>
-                        </ul>
-                        <div class="book-info">
-                            <h2>Harry Potter</h2>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
 
+            echo "<div class='container'>
+            <div class='card-conatiner'>
+                <div class='card'>
+                <div class='img-div'>";
 
-                        </div>
-                    </div>
-                </div>
+            echo "<img src='./images/BOOKS COVER'", $row['item_name'], "alt='book1'>";
+
+            echo "      </div>
+            <ul class='rating'>
+                <li><a><i class='fa fa-star'></i></a></li>
+                <li><a><i class='fa fa-star'></i></a></li>
+                <li><a><i class='fa fa-star'></i></a></li>
+                <li><a><i class='fa fa-star-half-empty'></i></a></li>
+                <li><a><i class='fa fa-star-o'></i></a></li>
+            </ul>
+            <div class='book-info'>";
+            echo "<h2>", $row['item_name'], "</h2>";
+            echo "<span>", $row['item_desc'], "</span>";
+            echo "  </div>
             </div>
-        <?php
+            </div>
+            </div>";
         }
         ?>
     </center>

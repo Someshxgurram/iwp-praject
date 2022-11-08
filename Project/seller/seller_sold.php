@@ -1,5 +1,6 @@
 <?php
 include('../includes/connection.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@ include('../includes/connection.php');
 </head>
 
 <body>
-<div class="nav">
+    <div class="nav">
         <div class="title">
             <div class="logo">
                 <h1>SecondPages</h1>
@@ -26,7 +27,7 @@ include('../includes/connection.php');
         </div>
         <div class="menu" id="menu">
             <ul>
-            <li><a href="seller_list.php"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
+                <li><a href="seller_list.php"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
                 <li><a href="seller_sold.php"><i class="fa fa-handshake-o "></i><span>Sold Items</span></a></li>
                 <li><a href="seller_add.php"><i class="fa fa-plus-square"></i><span>Add Item</span></a></li>
                 <li><a href="seller_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
@@ -35,35 +36,30 @@ include('../includes/connection.php');
         </div>
     </div>
     <center>
-    <form action="" class="search">
-        <input type="text" placeholder="Search">
-        <input type="submit" class="fa" value="&#xf002;">
-    </form>
-</center>
+        <form action="" class="search">
+            <input type="text" placeholder="Search">
+            <input type="submit" class="fa" value="&#xf002;">
+        </form>
+    </center>
     <center>
-        <div class="container">
-            <div class="card">
-                <img src="./images/book.jpeg" alt="book1">
-                <h2>Name - Percy Jackson</h2>
-                <h2>Price - &#8377;700</h2>
-                <h2>Customer - Somesh</h2>
-                <h2>Date - 22/8/22</h2>
+        <?php
+        $seller_query = "SELECT * FROM sproducts where not customer='none' and seller = '$_SESSION[username]'";
+        $seller_result = mysqli_query($conn, $seller_query);
+        while ($row = mysqli_fetch_assoc($seller_result)) {
+        ?>
+            <div class="container">
+                <div class="card">
+                    <?php
+                    echo "<img src='./images/BOOKS COVER'", $row['item_name'], "alt='book1'>";
+                    echo "<h2> Name - ", $row['item_name'], "</h2>";
+                    echo "<h2> Category - ", $row['item_cat'], "</h2>";
+                    echo "<h2> Customer - ", $row['customer'], "</h2>";
+                    ?>
+                </div>
             </div>
-            <div class="card">
-                <img src="./images/book2.jpeg" alt="book1">
-                <h2>Name - Harry Potter</h2>
-                <h2>Price - &#8377;800</h2>
-                <h2>Customer - Kamalesh</h2>
-                <h2>Date - 2/7/22</h2>
-            </div>
-            <div class="card">
-                <img src="./images/book3.jpeg" alt="book1">
-                <h2>Name - Maze Runner</h2>
-                <h2>Price - &#8377;600</h2>
-                <h2>Customer - Sahithi</h2>
-                <h2>Date - 1/6/22</h2>
-            </div>
-        </div>
+        <?php
+        }
+        ?>
     </center>
     <script src="seller_sold.js"></script>
 </body>

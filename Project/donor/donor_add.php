@@ -1,5 +1,6 @@
 <?php
 include('../includes/connection.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,8 +54,9 @@ include('../includes/connection.php');
             $item_name = $_POST['title'];
             $item_desc = $_POST['desc'];
             $item_cat = $_POST['cat'];
+            $donor = $_SESSION['username'];
             $customer = "none";
-            $insert_query = "INSERT INTO dproducts (item_name, item_desc, item_cat,customer) VALUES ('$item_name', '$item_desc', '$item_cat','$customer')";
+            $insert_query = "INSERT INTO dproducts (item_name, item_desc, item_cat,donor,customer) VALUES ('$item_name', '$item_desc', '$item_cat','$donor','$customer')";
 
             $result_insert = mysqli_query($conn, $insert_query);
 

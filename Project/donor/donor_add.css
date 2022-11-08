@@ -12,37 +12,37 @@
   background: gray;
 }
 ::-webkit-scrollbar-track {
-  background: #e9d5ca;
+  background: #f9f7f7;
 }
 body {
-  background-color: #827397;
+  background-color: #3f72af;
 }
 .nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #e9d5ca;
+  background-color: #f9f7f7;
   position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
   padding: 1%;
 }
-.nav .title{
+.nav .title {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-top: -20px;
 }
-.nav .title .logo{
+.nav .title .logo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.nav .title .logo img{
+.nav .title .logo img {
   width: 30px;
 }
 
@@ -81,7 +81,7 @@ body {
 .nav .menu ul li a#active span {
   visibility: visible;
   animation: dropup;
-  animation-duration: 1s; 
+  animation-duration: 1s;
 }
 .nav .bar {
   display: none;
@@ -97,7 +97,7 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .nav .title{
+  .nav .title {
     justify-content: space-between;
     width: 90%;
     margin-top: 0px;
@@ -149,15 +149,15 @@ form {
   width: 40%;
   border-radius: 30px;
   padding: 3% 0%;
-  background-color: #363062;
-  color: wheat;
+  background-color: #1f4690;
+  color: #dbe2ef;
 }
 form input {
   width: 250px;
   height: 35px;
   border: none;
   border-radius: 5px;
-  background-color: #f0e3ca;
+  background-color: #dbe2ef;
   padding-left: 10px;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -177,15 +177,15 @@ form p {
 form input[type="submit"] {
   width: 100px;
   height: 36px;
-  background-color: #827397;
+  background-color: #dbe2ef;
   border-radius: 10px;
   border: none;
   font-weight: bold;
   transition: 0.5s;
   margin-top: 40px;
   margin-bottom: 40px;
-  color: #f0e3ca;
-  cursor:  pointer;
+  color: #1f4690;
+  cursor: pointer;
 }
 form input[type="submit"]:hover {
   transform: scaleY(1.1);

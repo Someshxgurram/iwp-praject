@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 
         $row = mysqli_fetch_array($result);
         $_SESSION['username'] = $row['username'];
-        header('location:seller_add.php');
+        header('location:seller_list.php');
     } else {
         $error[] = 'incorrect email or password!';
     }
