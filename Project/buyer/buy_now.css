@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #827397;
+  background-color: #3f72af;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -14,14 +14,14 @@ body {
   background: gray;
 }
 ::-webkit-scrollbar-track {
-  background: #e9d5ca;
+  background: #f9f7f7;
 }
 .nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #e9d5ca;
+  background-color: #f9f7f7;
   position: fixed;
   top: 0;
   z-index: 5;
@@ -95,7 +95,7 @@ body {
   margin-top: 10%;
   margin-left: 5%;
   padding: 3%;
-  background-color: #4d4c7d;
+  background-color: #1f4690;
 }
 .container .image {
   display: flex;
@@ -113,7 +113,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  color: wheat;
+  color: #dbe2ef;
   padding-left: 20px;
 }
 .container .details h1 {
@@ -127,18 +127,20 @@ body {
   font-weight: 500;
 }
 .container .details input[type="submit"] {
-  background-color: #363062;
+  background-color: #7fb5ff;
   padding: 10%;
   border-radius: 10px;
-  color: wheat;
+  color: #dbe2ef;
   cursor: pointer;
-  border: 2px solid #2c3a47;
+  border: 2px solid #7fb5ff;
   padding: 5px 10px;
   font-size: 20px;
   margin-top: 30px;
 }
 .container .details input[type="submit"]:hover {
-  background: #ac7088;
+  background: #f9f7f7;
+  border: 2px solid #f9f7f7;
+  color: #000;
 }
 @media screen and (max-width: 1400px) {
   .container {

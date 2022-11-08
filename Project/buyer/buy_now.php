@@ -38,8 +38,11 @@ session_start();
     <div class="container">
         <div class="image">
             <?php
+            if (isset($_GET['item_name'])) {
+                $_SESSION['book'] = $_GET['item_name'];
+            }
             $book_name = $_SESSION['book'];
-            echo "<img src='./images/BOOKS COVER/'", $book_name, "alt='book'>";
+            echo '<img src="./images/BOOKS COVER/' . strtolower($book_name) . '.jpg" alt="book">';
             ?>
         </div>
         <div class="details">
@@ -62,10 +65,10 @@ session_start();
                 <input type="submit" value="Buy Now" name="submit">
             </form>
             <?php
-            if (isset($_GET['submit'])) {
+            if (isset($_POST['submit'])) {
 
-                $username = $_GET['item_name'];
-                $update_query = "SELECT * from blogin where username = '$item_name'";
+                $username = $_SESSION['username'];
+                $update_query = "SELECT * from blogin where username = '$username'";
                 $update_result = mysqli_query($conn, $update_query);
                 $update_row = mysqli_fetch_array($update_result);
 
@@ -73,7 +76,7 @@ session_start();
                 echo "<h2>", $wallet_current, "</h2>";
                 $wallet_update = $wallet_current - $price;
 
-                $buy_query = "UPDATE blogin SET wallet = $wallet_update where username = '$username'";
+                $buy_query = "UPDATE blogin SET wallet = $wallet where username = '$username'";
                 $wallet_result = mysqli_query($conn, $buy_query);
 
                 header('location:buyer_home.php');

@@ -61,7 +61,7 @@ session_start();
                         <div class="card">
                             <form action="" method="POST">
                                 <div class="img-div">
-                                    <img src="./images/book.jpeg" alt="book">
+                                    <img src="./images/BOOKS COVER/' . strtolower($row['item_name']) . '.jpg" alt="book">
                                 </div>
                                 <ul class="rating">
                                     <li><a><i class="fa fa-star"></i></a></li>
@@ -73,17 +73,12 @@ session_start();
                                 <div class="book-info">';
                     echo "<h2>" . $row['item_name'] . "</h2>";
                     echo "<span>" . $row['item_desc'] . "</span>";
-                    echo "<h2>" . $row['item_price'] . "</h2>";
+                    echo "<h2> &#8377;" . $row['item_price'] . "</h2>";
                     echo '<br>
                                     <a href="buy_now.php?item_name=';
                     echo $row['item_name'];
                     echo '"name="submit">Buy Now</a>
                             </form>';
-                    // if (isset($_POST['submit'])) {
-                    //     $book = $_POST['book_name'];
-                    //     $_SESSION['book'] = $book;
-                    //     header('location:buy_now.php');
-                    // }
                     echo '</div>
                     </div>
                 </div>';
