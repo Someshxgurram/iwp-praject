@@ -14,7 +14,7 @@ include('../includes/connection.php')
 </head>
 
 <body>
-<div class="nav">
+    <div class="nav">
         <div class="title">
             <div class="logo">
                 <h1>SecondPages</h1>
@@ -26,7 +26,7 @@ include('../includes/connection.php')
         </div>
         <div class="menu" id="menu">
             <ul>
-                <li><a href="buyer_home.php" ><i class="fa fa-home "></i><span>Home</span></a></li>
+                <li><a href="buyer_home.php"><i class="fa fa-home "></i><span>Home</span></a></li>
                 <li><a href="buyer_account.php"><i class="fa fa-user-circle "></i><span>Account</span></a></li>
                 <li><a href="buyer_purchase.php"><i class="fa fa-cart-arrow-down "></i><span>Purchases</span></a></li>
                 <li><a href="buyer_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
@@ -36,7 +36,7 @@ include('../includes/connection.php')
     </div>
     <div class="container">
         <center>
-            <table>
+            <table cellspacing="10px">
                 <tr>
                     <th style="width: 20%;">Product</th>
                     <th style="width: 60%;">Description</th>
@@ -51,7 +51,7 @@ include('../includes/connection.php')
                     <tr>
                         <td><?php echo $rows['product_name']; ?></td>
                         <td><?php echo $rows['product_description']; ?></td>
-                        <td><?php echo $rows['price']; ?></td>
+                        <td><?php echo " &#8377;", $rows['price']; ?></td>
                         <td><?php echo $rows['date']; ?></td>
                     </tr>
                 <?php

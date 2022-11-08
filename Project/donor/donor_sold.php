@@ -1,5 +1,6 @@
 <?php
 include('../includes/connection.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@ include('../includes/connection.php');
 </head>
 
 <body>
-<div class="nav">
+    <div class="nav">
         <div class="title">
             <div class="logo">
                 <h1>SecondPages</h1>
@@ -22,8 +23,8 @@ include('../includes/connection.php');
             </div>
             <div class="bar">
                 <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
+            </div>
         </div>
-</div>
         <div class="menu" id="menu">
             <ul>
                 <li><a href="donor_list.php"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
@@ -35,33 +36,32 @@ include('../includes/connection.php');
         </div>
     </div>
     <center>
-    <form action="" class="search">
-        <input type="text" placeholder="Search">
-        <input type="submit" class="fa" value="&#xf002;">
-    </form>
-</center>
-    <center>
-        <div class="container">
-            <div class="card">
-                <img src="./images/book.jpeg" alt="book1">
-                <h2>Name - Percy Jackson</h2>
-                <h2>Customer - Somesh</h2>
-                <h2>Date - 22/8/22</h2>
-            </div>
-            <div class="card">
-                <img src="./images/book2.jpeg" alt="book1">
-                <h2>Name - Harry Potter</h2>
-                <h2>Customer - Kamalesh</h2>
-                <h2>Date - 2/7/22</h2>
-            </div>
-            <div class="card">
-                <img src="./images/book3.jpeg" alt="book1">
-                <h2>Name - Maze Runner</h2>
-                <h2>Customer - Sahithi</h2>
-                <h2>Date - 1/6/22</h2>
-            </div>
-        </div>
+        <form action="" class="search">
+            <input type="text" placeholder="Search">
+            <input type="submit" class="fa" value="&#xf002;">
+        </form>
     </center>
+    <center>
+        <?php
+        $donor_query = "SELECT * FROM dproducts";
+        $donor_result = mysqli_query($conn, $donor_query);
+        while ($row = mysqli_fetch_assoc($donor_result)) {
+        ?>
+            <div class="container">
+                <div class="card">
+                    <?php
+                    echo "<img src='./images/BOOKS COVER'", $row['item_name'], "alt='book1'>";
+                    echo "<h2> Name - ", $row['item_name'], "</h2>";
+                    echo "<h2> Category - ", $row['item_cat'], "</h2>";
+                    echo "<h2> Customer - ", $row['customer'], "</h2>";
+                    ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
+    </center>
+
     <script src="donor_sold.js"></script>
 </body>
 

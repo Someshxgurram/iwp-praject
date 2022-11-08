@@ -28,13 +28,13 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Project/buyer/buyer_login.php">Shop</a>
+                        <a class="nav-link" href="../buyer/buyer_login.php">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Project/seller/seller_login.php">Sell</a>
+                        <a class="nav-link" href="../seller/seller_login.php">Sell</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Project/donor/donor_login.php">Donate</a>
+                        <a class="nav-link" href="../donor/donor_login.php">Donate</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -54,7 +54,7 @@
             <h5>New Materials</h5>
             <h1><span>One Stop</span> Destination for Books</h1>
             <p>Second Hand Study Materials<br> and both Non-Fiction and Fiction Books</p>
-            <button>Shop Now </button>
+            <button><a class="nav-link" href="../buyer/buyer_login.php">Shop Now</a></button>
         </div>
     </section>
 
@@ -64,21 +64,21 @@
                 <img clas="img-fluid" src="images/book types/notes.jpg" alt="notes">
                 <div class="details">
                     <h2>A collection of Notes from those who have done well</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <button class="text-uppercase"><a class="nav-link" href="/Project/buyer/buyer_login.php">Shop Now</a></button>
                 </div>
             </div>
             <div class="one col-lg-4 col-md-12 col-12 p-0">
                 <img clas="img-fluid" src="images/book types/fiction.jpg" alt="notes">
                 <div class="details">
                     <h2>A noteable set of book from the best stroytellers</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <button class="text-uppercase"><a class="nav-link" href="/Project/buyer/buyer_login.php">Shop Now</a></button>
                 </div>
             </div>
             <div class="one col-lg-4 col-md-12 col-12 p-0">
                 <img clas="img-fluid" src="images/book types/non-fiction.jpg" alt="notes">
                 <div class="details">
                     <h2>A look into the greatest to ever do it</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <button class="text-uppercase"><a class="nav-link" href="/Project/buyer/buyer_login.php">Shop Now</a></button>
                 </div>
             </div>
         </div>

@@ -1,15 +1,21 @@
+<?php
+include('../includes/connection.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy_now</title>
+    <title>Buy_Now</title>
     <link rel="stylesheet" href="buy_now.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-<div class="nav">
+    <div class="nav">
         <div class="title">
             <div class="logo">
                 <h1>SecondPages</h1>
@@ -21,7 +27,7 @@
         </div>
         <div class="menu" id="menu">
             <ul>
-                <li><a href="buyer_home.php" ><i class="fa fa-home "></i><span>Home</span></a></li>
+                <li><a href="buyer_home.php"><i class="fa fa-home "></i><span>Home</span></a></li>
                 <li><a href="buyer_account.php"><i class="fa fa-user-circle "></i><span>Account</span></a></li>
                 <li><a href="buyer_purchase.php"><i class="fa fa-cart-arrow-down "></i><span>Purchases</span></a></li>
                 <li><a href="buyer_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
@@ -31,17 +37,45 @@
     </div>
     <div class="container">
         <div class="image">
-            <img src="./images/book.jpeg" alt="book">
+            <?php
+            $book_name = $_SESSION['book'];
+            echo "<img src='./images/BOOKS COVER/'", $book_name, "alt='book'>";
+            ?>
         </div>
         <div class="details">
-            <h1>Percy Jackson</h1>
-            <h1>&#8377;600</h1>
-            <h1>Description</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed deleniti accusantium minus odio dolores saepe similique, iusto veritatis assumenda tenetur quisquam, eaque aut sequi nobis et quos illum distinctio aspernatur?</p>
+            <?php
+            $search_query = "SELECT * FROM bproducts WHERE item_name = '$book_name'";
+            $result = mysqli_query($conn, $search_query);
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<h1>", $row['item_name'], "</h1>";
+                    $price = $row['item_price'];
+                    echo "<h1>", $row['item_price'], "</h1>";
+                    echo "<h1> Description </h1>";
+                    echo "<p>", $row['item_desc'], "</p>";
+                }
+            } else {
+                echo "<h1> Not Possible </h1>";
+            }
+            ?>
             <form action="">
                 <input type="submit" value="Buy Now" name="buy">
             </form>
+            <?php
+            if (isset($_POST['submit'])) {
+                $username = $_SESSION['username'];
+                $update_query = "SELECT * from blogin where name = '$username'";
+                $update_result = mysqli_query($conn, $update_query);
+                $update_row = mysqli_fetch_array($update_result);
+                $wallet_current = $update_row['wallet'];
+                $wallet_update = $wallet_current - $price;
+                $buy_query = "UPDATE blogin SET wallet = $price";
+                $wallet_result = mysqli_query($conn, $buy_query);
+                header('location:buyer_home.php');
+            }
+            ?>
         </div>
-    </div> 
+    </div>
 </body>
+
 </html>

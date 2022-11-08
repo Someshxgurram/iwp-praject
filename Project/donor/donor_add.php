@@ -14,7 +14,7 @@ include('../includes/connection.php');
 </head>
 
 <body>
-<div class="nav">
+    <div class="nav">
         <div class="title">
             <div class="logo">
                 <h1>SecondPages</h1>
@@ -53,7 +53,8 @@ include('../includes/connection.php');
             $item_name = $_POST['title'];
             $item_desc = $_POST['desc'];
             $item_cat = $_POST['cat'];
-            $insert_query = "INSERT INTO dproducts (item_name, item_desc, item_cat) VALUES ('$item_name', '$item_desc', '$item_cat')";
+            $customer = "none";
+            $insert_query = "INSERT INTO dproducts (item_name, item_desc, item_cat,customer) VALUES ('$item_name', '$item_desc', '$item_cat','$customer')";
 
             $result_insert = mysqli_query($conn, $insert_query);
 

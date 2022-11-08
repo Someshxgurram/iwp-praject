@@ -22,7 +22,7 @@ include('../includes/connection.php');
             </div>
             <div class="bar">
                 <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
-        </div>
+            </div>
         </div>
         <div class="menu" id="menu">
             <ul>
@@ -35,95 +35,65 @@ include('../includes/connection.php');
         </div>
     </div>
     <center>
-    <form action="" class="search">
-        <input type="text" placeholder="Search">
-        <input type="submit" class="fa" value="&#xf002;">
-    </form>
-</center>
+        <form action="" class="search">
+            <input type="text" placeholder="Search">
+            <input type="submit" class="fa" value="&#xf002;">
+        </form>
+    </center>
     <center>
         <h1 class="h1">Listed Items</h1>
-        <div class="container">
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book.jpeg" alt="book">
+        <?php
+        $donor_query = "SELECT * FROM dproducts where customer='none'";
+        $donor_result = mysqli_query($conn, $donor_query);
+        while ($row = mysqli_fetch_assoc($donor_result)) {
+        ?>
+            <div class="container">
+                <div class="card-conatiner">
+                    <div class="card">
+                        <div class="img-div">
+                            <?php
+                            echo "<img src='./images/BOOKS COVER'", $row['item_name'], "alt='book1'>";
+                            ?>
+                        </div>
+                        <ul class="rating">
+                            <li><a><i class="fa fa-star"></i></a></li>
+                            <li><a><i class="fa fa-star"></i></a></li>
+                            <li><a><i class="fa fa-star"></i></a></li>
+                            <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                            <li><a><i class="fa fa-star-o"></i></a></li>
+                        </ul>
+                        <div class="book-info">
+                            <?php
+                            echo "<h2>", $row['item_name'], "</h2>";
+                            echo "<span>", $row['item_desc'], "</span>";
+                            ?>
+                        </div>
                     </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Percy Jackson</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
+                </div>
+                <div class="card-conatiner">
+                    <div class="card">
+                        <div class="img-div">
+                            <img src="./images/book2.jpeg" alt="book">
+                        </div>
+                        <ul class="rating">
+                            <li><a><i class="fa fa-star"></i></a></li>
+                            <li><a><i class="fa fa-star"></i></a></li>
+                            <li><a><i class="fa fa-star"></i></a></li>
+                            <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                            <li><a><i class="fa fa-star-o"></i></a></li>
+                        </ul>
+                        <div class="book-info">
+                            <h2>Harry Potter</h2>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
 
 
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book2.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Harry Potter</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book3.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Maze Runner</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book3.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Maze Runner</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+        }
+        ?>
     </center>
     <script src="donor_list.js"></script>
 </body>

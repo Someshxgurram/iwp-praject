@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #827397;
+  background-color: #3f72af;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -15,34 +15,34 @@ body {
   background: gray;
 }
 ::-webkit-scrollbar-track {
-  background: #e9d5ca;
+  background: #f9f7f7;
 }
 .nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #e9d5ca;
+  background-color: #f9f7f7;
   position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
   padding: 1%;
 }
-.nav .title{
+.nav .title {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-top: -20px;
 }
-.nav .title .logo{
+.nav .title .logo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.nav .title .logo img{
+.nav .title .logo img {
   width: 30px;
 }
 .nav .menu ul {
@@ -80,7 +80,7 @@ body {
 .nav .menu ul li a#active span {
   visibility: visible;
   animation: dropup;
-  animation-duration: 1s; 
+  animation-duration: 1s;
 }
 .nav .bar {
   display: none;
@@ -97,19 +97,19 @@ body {
   border-collapse: collapse;
 }
 .container table th {
-  background-color: #bface0;
+  background-color: #1f4690;
   font-size: 24px;
   font-weight: 700;
   padding: 2%;
   width: 20%;
-  border: 2px solid #ebc7e8;
+  border: 2px solid #dbe2ef;
 }
 .container table td {
   text-align: center;
   font-size: 20px;
   font-weight: 500;
   color: whitesmoke;
-  border: 2px solid #ebc7e8;
+  border: 2px solid #dbe2ef;
 }
 .container table td img {
   width: 150px;
@@ -124,7 +124,7 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .nav .title{
+  .nav .title {
     justify-content: space-between;
     width: 90%;
     margin-top: 0px;

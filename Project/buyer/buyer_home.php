@@ -1,5 +1,6 @@
 <?php
-include('../includes/connection.php')
+include('../includes/connection.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +28,7 @@ include('../includes/connection.php')
         </div>
         <div class="menu" id="menu">
             <ul>
-                <li><a href="buyer_home.php" ><i class="fa fa-home "></i><span>Home</span></a></li>
+                <li><a href="buyer_home.php"><i class="fa fa-home "></i><span>Home</span></a></li>
                 <li><a href="buyer_account.php"><i class="fa fa-user-circle "></i><span>Account</span></a></li>
                 <li><a href="buyer_purchase.php"><i class="fa fa-cart-arrow-down "></i><span>Purchases</span></a></li>
                 <li><a href="buyer_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
@@ -36,234 +37,66 @@ include('../includes/connection.php')
         </div>
     </div>
     <center>
-    <form action="" class="search">
-        <input type="text" placeholder="Search">
-        <input type="submit" class="fa" value="&#xf002;">
-    </form>
-</center>
+        <form action="" method="POST" enctype="multipart/form-data" class="search">
+            <input type="text" name="book_name" placeholder="Search">
+            <input type="submit" name="submit" class="fa" value="&#xf002;">
+        </form>
+    </center>
+    <?php
+    if (isset($_POST['submit'])) {
+        $book = $_POST['book_name'];
+        $_SESSION['book'] = $book;
+        header('location:buy_now.php');
+    }
+    ?>
     <center>
-        <div class="container">
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Percy Jackson</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;600</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book2.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Harry Potter</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;800</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book3.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Maze Runner</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;700</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book2.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Harry Potter</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;700</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book3.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Maze Runner</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;800</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book.jpeg" alt="book">
-                    </div>
-                    <ul class="rat0ing">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Percy Jackson</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;700</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book3.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Maze Runner</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;700</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Percy Jackson</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;600</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book2.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Harry Potter</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;800</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book3.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Percy Jackson</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;700</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-conatiner">
-                <div class="card">
-                    <div class="img-div">
-                        <img src="./images/book.jpeg" alt="book">
-                    </div>
-                    <ul class="rating">
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star"></i></a></li>
-                        <li><a><i class="fa fa-star-half-empty"></i></a></li>
+        <?php
 
-                        <li><a><i class="fa fa-star-o"></i></a></li>
-                    </ul>
-                    <div class="book-info">
-                        <h2>Harry Potter</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deserunt similique ea, facilis autem necessitatibus eaque numquam odit cum hic quibusdam. Consequatur et nihil quae possimus facilis, ducimus fugit enim.</span>
-                        <h2>&#8377;600</h2>
-                        <br> <a href="buy_now.php">Buy Now</a>
+        $book_query = "SELECT * from bproducts";
+        $result = mysqli_query($conn, $book_query);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+                <div class="container">
+                    <div class="card-conatiner">
+                        <div class="card">
+                            <form action="" method="POST">
+                                <div class="img-div">
+                                    <img src="./images/book.jpeg" alt="book">
+                                </div>
+                                <ul class="rating">
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                                    <li><a><i class="fa fa-star-o"></i></a></li>
+                                </ul>
+                                <div class="book-info">
+                                    <?php
+                                    echo "<h2>", $row['item_name'], "</h2>";
+                                    echo "<span>", $row['item_desc'], "</span>";
+                                    echo "<h2>", $row['item_price'], "</h2>";
+                                    ?>
+                                    <br>
+                                    <a href="buy_now.php">Buy Now</a>
+                            </form>
+
+                            <?php
+                            if (isset($_POST['submit'])) {
+                                $book = $_POST['book_name'];
+                                $_SESSION['book'] = $book;
+                                header('location:buy_now.php');
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
-            </div>
+                </div>
+        <?php
+            }
+        }
+
+        ?>
         </div>
     </center>
     <div class="choices" id="choicem">

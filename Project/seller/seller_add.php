@@ -1,5 +1,6 @@
 <?php
 include('../includes/connection.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@ include('../includes/connection.php');
 </head>
 
 <body>
-<div class="nav">
+    <div class="nav">
         <div class="title">
             <div class="logo">
                 <h1>SecondPages</h1>
@@ -26,7 +27,7 @@ include('../includes/connection.php');
         </div>
         <div class="menu" id="menu">
             <ul>
-            <li><a href="seller_list.php"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
+                <li><a href="seller_list.php"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
                 <li><a href="dono.php"><i class="fa fa-handshake-o "></i><span>Sold Items</span></a></li>
                 <li><a href="seller_add.php"><i class="fa fa-plus-square"></i><span>Add Item</span></a></li>
                 <li><a href="seller_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
@@ -35,7 +36,7 @@ include('../includes/connection.php');
         </div>
     </div>
     <div class="container">
-            <form action="#" method="POST" enctype="multipart/form-data">
+        <form action="#" method="POST" enctype="multipart/form-data">
             <h2>Enter The Book Details</h2>
             <input type="text" name="title" id="title" placeholder="Enter the title" required>
             <input type="text" name="desc" id="desc" placeholder="Enter the description">
@@ -46,7 +47,7 @@ include('../includes/connection.php');
             <input type="file" placeholder="Choose Image">
             <input type="submit" name="submit" value="Add Item">
 
-            </form>
+        </form>
         <?php
 
         if (isset($_POST['submit'])) {
@@ -55,7 +56,9 @@ include('../includes/connection.php');
             $item_desc = $_POST['desc'];
             $item_cat = $_POST['cat'];
             $item_price = $_POST['price'];
-            $insert_query = "INSERT INTO sproducts (item_name, item_desc, item_price, item_cat) VALUES ('$item_name', '$item_desc', '$item_price','$item_cat')";
+            $seller = $_SESSION['username'];
+            $customer = 'none';
+            $insert_query = "INSERT INTO sproducts (item_name, item_desc, item_price, item_cat,seller,customer) VALUES ('$item_name', '$item_desc', '$item_price','$item_cat','$seller','$customer')";
 
             $result_insert = mysqli_query($conn, $insert_query);
 

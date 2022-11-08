@@ -1,5 +1,27 @@
 <?php
 include('../includes/connection.php');
+
+session_start();
+
+if (isset($_POST['submit'])) {
+
+    $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+    $pass = md5($_POST['password']);
+
+    $select = " SELECT * FROM dlogin WHERE username = '$uname' && password = '$pass' ";
+    $result = mysqli_query($conn, $select);
+
+    if (mysqli_num_rows($result) > 0) {
+
+        $row = mysqli_fetch_array($result);
+        $_SESSION['username'] = $row['username'];
+        header('location:donor_list.php');
+    } else {
+        $error[] = 'incorrect email or password!';
+    }
+};
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +41,9 @@ include('../includes/connection.php');
         <div class="forms">
             <div class="form login">
                 <span class="title">Login</span>
-                <form action="#">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter Email" required name="mail_address" id="mail_address">
+                        <input type="text" placeholder="Enter Username" required name="uname" id="uname">
                         <i class="uil uil-envelope-check icon"></i>
                     </div>
                     <div class="input-field">
@@ -41,63 +63,26 @@ include('../includes/connection.php');
                     </div>
 
                     <div class="input-field button">
-                        <a href="./donor_list.php"><input type="button" value="Login"></a>
+                        <input type="submit" name="submit" value="Login">
                     </div>
                 </form>
 
                 <div class="login-signup">
                     <span class="text">Haven't Registered?
-                        <a href="#" class="text signup-link">Register Now</a>
+                        <a href="donor_registration.php" class="text signup-link">Register Now</a>
                     </span>
                 </div>
                 <a href="../main/landing.php" class="back">Go To Home</a>
             </div>
-            <!--Registration Form-->
-            <div class="form signup">
-                <span class="title">Registration</span>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" placeholder="Enter Name" required name="name" id="name">
-                        <i class="uil uil-user icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" placeholder="Enter Phone Number" required name="pnumber" id="pnumber">
-                        <i class="uil uil-phone-volume icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" placeholder="Enter Aadhar Card Number" required name="anumber" id="anumber">
-                        <i class="uil uil-postcard icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" placeholder="Enter Email" required name="mail_address" id="mail_address">
-                        <i class="uil uil-envelope-check icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter Password" required name="password" id="password">
-                        <i class="uil uil-lock-alt icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="password" placeholder="Confirm Password" required name="cpassword" id="cpassword">
-                        <i class="uil uil-lock-alt icon"></i>
-                        <i class="uil uil-eye showPw"></i>
-                    </div>
-
-                    <div class="input-field button">
-                        <input type="button" value="Register">
-                    </div>
-                </form>
-
-                <div class="login-signup">
-                    <span class="text">Already registerd?
-                        <a href="#" class="text login-link">Login Now</a>
-                    </span>
-                </div>
-            </div>
-
-
-
         </div>
     </div>
+    <?php
+    if (isset($error)) {
+        foreach ($error as $error) {
+            echo '<span class="error-msg">' . $error . '</span>';
+        };
+    };
+    ?>
     <script src="donor_login.js"></script>
 </body>
 

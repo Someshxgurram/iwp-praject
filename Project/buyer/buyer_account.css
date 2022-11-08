@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #827397;
+  background-color: #3f72af;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -19,27 +19,27 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #e9d5ca;
+  background-color: #f9f7f7;
   position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
   padding: 1%;
 }
-.nav .title{
+.nav .title {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-top: -20px;
 }
-.nav .title .logo{
+.nav .title .logo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.nav .title .logo img{
+.nav .title .logo img {
   width: 30px;
 }
 .nav .menu ul {
@@ -77,7 +77,7 @@ body {
 .nav .menu ul li a#active span {
   visibility: visible;
   animation: dropup;
-  animation-duration: 1s; 
+  animation-duration: 1s;
 }
 .nav .bar {
   display: none;
@@ -98,7 +98,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 90%;
-  background-color: #4d4c7d;
+  background-color: #1f4690;
   height: 550px;
 }
 .container .user_details .display {
@@ -113,7 +113,7 @@ body {
   font-size: 20px;
   font-weight: 600;
 }
-.container .user_details .display .fa {
+.container .user_details .display .uil {
   font-size: 24px;
   color: black;
   cursor: pointer;
@@ -124,7 +124,7 @@ body {
 }
 
 .container .wallet {
-  background-color: #4d4c7d;
+  background-color: #1f4690;
   width: 90%;
   height: 550px;
   display: flex;
@@ -140,7 +140,9 @@ body {
   padding: 2% 5%;
   color: whitesmoke;
   font-size: 20px;
-  background-color: #363062;
+  background-color: #1f4690;
+  border: 2px solid #1b2430;
+  border-radius: 10px;
 }
 .container .wallet .top_up {
   display: grid;
@@ -150,17 +152,18 @@ body {
   grid-column-gap: 10px;
 }
 input[type="submit"] {
-  background-color: #363062;
+  background-color: #1f4690;
   color: white;
   padding: 10%;
   border-radius: 10px;
   cursor: pointer;
-  border: 2px solid #2c3a47;
+  border: 2px solid #1b2430;
   width: 50px;
   height: 50px;
 }
 input[type="submit"]:hover {
-  background: #ac7088;
+  background: #dbe2ef;
+  color: #000;
 }
 
 @media screen and (max-width: 1015px) {
@@ -170,7 +173,7 @@ input[type="submit"]:hover {
     align-items: center;
     justify-content: center;
   }
-  .nav .title{
+  .nav .title {
     justify-content: space-between;
     width: 90%;
     margin-top: 0px;
