@@ -4,7 +4,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,6 +34,7 @@ session_start();
             </ul>
         </div>
     </div>
+    <div class="content">
     <div class="container">
         <div class="image">
             <?php
@@ -44,6 +44,7 @@ session_start();
             $book_name = $_SESSION['book'];
             echo '<img src="./images/BOOKS COVER/' . strtolower($book_name) . '.jpg" alt="book">';
             ?>
+            
         </div>
         <div class="details">
             <?php
@@ -84,6 +85,10 @@ session_start();
                 header('location:buyer_home.php');
             }
             ?>
+        </div>
+        </div>
+        <div class="review">
+            <h1>review</h1>
         </div>
     </div>
 </body>
