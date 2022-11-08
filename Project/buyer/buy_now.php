@@ -52,6 +52,7 @@ session_start();
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<h1>", $row['item_name'], "</h1>";
+                    $name = $row['item_name'];
                     $price = $row['item_price'];
                     echo "<h1> &#8377;", $row['item_price'], "</h1>";
                     echo "<h1> Description </h1>";
@@ -73,11 +74,12 @@ session_start();
                 $update_row = mysqli_fetch_array($update_result);
 
                 $wallet_current = $update_row['wallet'];
-                echo "<h2>", $wallet_current, "</h2>";
                 $wallet_update = $wallet_current - $price;
 
-                $buy_query = "UPDATE blogin SET wallet = $wallet where username = '$username'";
+                $buy_query = "UPDATE blogin SET wallet = $wallet_update where username = '$username'";
                 $wallet_result = mysqli_query($conn, $buy_query);
+                $bought = "UPDATE bproducts SET bought = '$username' where item_name = '$name'";
+                $bought_result = mysqli_query($conn, $bought);
 
                 header('location:buyer_home.php');
             }

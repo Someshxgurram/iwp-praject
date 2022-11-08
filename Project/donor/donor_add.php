@@ -43,7 +43,7 @@ session_start();
             <input type="text" name="cat" id="cat" placeholder="Enter the category">
             <p>Upload Book Image</p>
             <br>
-            <input type="file" placeholder="Choose Image">
+            <input type="file" name="uploadfile" placeholder="Choose Image">
             <input type="submit" name="submit" value="Add Item">
         </form>
         <?php
@@ -51,16 +51,23 @@ session_start();
         if (isset($_POST['submit'])) {
 
 
+            $filename = $_FILES["uploadfile"]["name"];
+            $tempname = $_FILES["uploadfile"]["tmp_name"];
+            $folder = "./images/" . $filename;
+
+
+
+
             $item_name = $_POST['title'];
             $item_desc = $_POST['desc'];
             $item_cat = $_POST['cat'];
             $donor = $_SESSION['username'];
             $customer = "none";
-            $insert_query = "INSERT INTO dproducts (item_name, item_desc, item_cat,donor,customer) VALUES ('$item_name', '$item_desc', '$item_cat','$donor','$customer')";
+            $insert_query = "INSERT INTO dproducts (filename,item_name, item_desc, item_cat,donor,customer) VALUES ('$filename','$item_name', '$item_desc', '$item_cat','$donor','$customer')";
 
             $result_insert = mysqli_query($conn, $insert_query);
 
-            if ($result_insert) {
+            if ($result_insert and move_uploaded_file($tempname, $folder)) {
                 echo "<h2 id='addtion'>", $item_name, " has been added!</h2>";
             }
         } ?>

@@ -31,3 +31,16 @@ function choice(){
         x.className="choices"
     }
 }
+
+function con1(){
+    a=document.getElementById('container1');
+    b=document.getElementById('container2');
+    if(a.className==="container"){
+        a.className+=" close";
+        b.className="container";
+    }
+    else{
+        a.className="container";
+        b.className+=" close";
+    }
+}

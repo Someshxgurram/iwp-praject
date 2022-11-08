@@ -42,24 +42,21 @@ session_start();
         </form>
     </center>
     <center>
-        <?php
-        $donor_query = "SELECT * FROM dproducts where not customer='none' and donor = '$_SESSION[username]'";
-        $donor_result = mysqli_query($conn, $donor_query);
-        while ($row = mysqli_fetch_assoc($donor_result)) {
-        ?>
-            <div class="container">
-                <div class="card">
-                    <?php
-                    echo "<img src='./images/BOOKS COVER'", $row['item_name'], "alt='book1'>";
-                    echo "<h2> Name - ", $row['item_name'], "</h2>";
-                    echo "<h2> Category - ", $row['item_cat'], "</h2>";
-                    echo "<h2> Customer - ", $row['customer'], "</h2>";
-                    ?>
-                </div>
-            </div>
-        <?php
-        }
-        ?>
+        <div class="container">
+            <?php
+            $donor_query = "SELECT * FROM dproducts where not customer='none' and donor = '$_SESSION[username]'";
+            $donor_result = mysqli_query($conn, $donor_query);
+            while ($row = mysqli_fetch_assoc($donor_result)) {
+
+                echo  '<div class="card">
+                    <img src="./images/BOOKS COVER/' . $row['item_name'] . '" alt="book1">
+                    <h2> Name - ' . $row['item_name'] . '</h2>
+                    <h2> Category - ' . $row['item_cat'] . '</h2>
+                    <h2> Customer - ' . $row['customer'] . '</h2>
+                </div>';
+            }
+            ?>
+        </div>
     </center>
 
     <script src="donor_sold.js"></script>

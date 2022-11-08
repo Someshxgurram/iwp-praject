@@ -54,7 +54,18 @@ session_start();
         echo "<div class='col col-3' data-label='Category'>", $row['item_cat'], "</div>";
         echo "<div class='col col-4' data-label='Price'> &#8377;", $row['item_price'], "</div>";
         echo "     </li>";
-      } ?>
+      }
+      $display_query1 = "SELECT * from bproducts where bought = '$_SESSION[username]'";
+      $display_result1 = mysqli_query($conn, $display_query1);
+      while ($row1 = mysqli_fetch_assoc($display_result1)) {
+        echo '<li class="table-row">';
+        echo "<div class='col col-1' data-label='Book Title'>", $row1['item_name'], "</div>";
+        echo "<div class='col col-2' data-label='Description'>", $row1['item_desc'], "</div>";
+        echo "<div class='col col-3' data-label='Category'>", $row1['item_cat'], "</div>";
+        echo "<div class='col col-4' data-label='Price'> &#8377;", $row1['item_price'], "</div>";
+        echo "     </li>";
+      }
+      ?>
     </ul>
   </div>
   <script src="buyer_purchase.js"></script>
