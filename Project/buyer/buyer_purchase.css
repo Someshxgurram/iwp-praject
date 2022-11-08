@@ -89,33 +89,77 @@ body {
   font-size: 30px;
 }
 .container {
-  padding-top: 10%;
-  padding-bottom: 2%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10%;
 }
-.container table {
-  width: 85%;
-  border-collapse: collapse;
+.table li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
 }
-.container table th {
-  background-color: #1f4690;
-  font-size: 24px;
-  font-weight: 700;
-  padding: 2%;
-  width: 20%;
-  border: 2px solid #dbe2ef;
+.table .table-header {
+    background-color: #95A5A6;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-align: center;
 }
-.container table td {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 500;
-  color: whitesmoke;
-  border: 2px solid #dbe2ef;
+.table .table-row {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    text-align: center;
 }
-.container table td img {
-  width: 150px;
-  height: 200px;
-  margin: 2%;
+.table .col-1 {
+    flex-basis: 20%;
 }
+.table .col-2 {
+    flex-basis: 50%;
+
+}
+.table  .col-3 {
+    flex-basis: 20%;
+}
+.table .col-4 {
+    flex-basis: 10%;
+}
+  
+@media all and (max-width: 767px) {
+  .container{
+    margin-top: 15%;
+  }
+  .table .table-header {
+      display: none;
+  }
+   .table li {
+      display: flex;
+      flex-direction: column;
+    }
+    .table .col {
+      
+      flex-basis: 100%;
+      
+    }
+    .table .col {
+      display: flex;
+      padding: 10px 0;  
+      text-align: left;
+    }
+      .table .col::before{
+        color: #6C7A89;
+        padding-right: 10px;
+        content: attr(data-label);
+        flex-basis: 18%;
+        text-align: left;
+      }
+
+    }
+
 
 @media screen and (max-width: 1015px) {
   .nav {
@@ -154,25 +198,10 @@ body {
     animation: slide;
     animation-duration: 1s;
   }
-  .container table {
-    width: 95%;
-  }
 }
-@media screen and (max-width: 890px) {
-  .container table td img {
-    width: 100px;
-    height: 150px;
-  }
-}
-@media screen and (max-width: 820px) {
-  .container {
-    overflow-x: scroll;
-    padding-top: 20%;
-  }
-  .container table {
-    width: 820px;
-    margin-left: 30px;
-    margin-right: 30px;
+@media screen and (max-width:460px) {
+  .container{
+    margin-top: 20%;
   }
 }
 

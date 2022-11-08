@@ -35,43 +35,39 @@ include('../includes/connection.php')
         </div>
     </div>
     <div class="container">
-        <center>
-            <table cellspacing="10px">
-                <tr>
-                    <th style="width: 20%;">Product</th>
-                    <th style="width: 60%;">Description</th>
-                    <th style="width: 10%;">Price</th>
-                    <th style="width: 10%;">Date</th>
-                </tr>
-                <?php
-                $query = "SELECT * from btransactions";
-                $result = mysqli_query($conn, $query);
-                while ($rows = $result->fetch_assoc()) {
-                ?>
-                    <tr>
-                        <td><?php echo $rows['product_name']; ?></td>
-                        <td><?php echo $rows['product_description']; ?></td>
-                        <td><?php echo " &#8377;", $rows['price']; ?></td>
-                        <td><?php echo $rows['date']; ?></td>
-                    </tr>
-                <?php
-                }
-                ?>
-                <tr>
-                    <td>
-                        book name
-                    </td>
-                    <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quaerat, pariatur praesentium nulla odit cumque voluptate saepe magni nesciunt explicabo adipisci reiciendis eos cupiditate incidunt? Minus dignissimos perspiciatis nulla nihil?
-                    </td>
-                    <td>
-                        &#8377;700
-                    </td>
-                    <td>1/07/2022</td>
-                </tr>
-            </table>
-        </center>
-    </div>
+  <ul class="table">
+    <li class="table-header">
+      <div class="col col-1">Book title</div>
+      <div class="col col-2">Discription</div>
+      <div class="col col-3">Category</div>
+      <div class="col col-4">Price</div>
+    </li>
+    <li class="table-row">
+      <div class="col col-1" data-label="Book Title">Percy Jackson</div>
+      <div class="col col-2" data-label="Discription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem praesentium necessitatibus provident expedita sunt. Qui corporis, nemo, fuga cupiditate ab numquam sapiente velit corrupti rerum in, perferendis hic dolore temporibus!</div>
+      <div class="col col-3" data-label="Category">Story</div>
+      <div class="col col-4" data-label="Price">&#8377;700</div>
+    </li>
+    <li class="table-row">
+    <div class="col col-1" data-label="Book Title">Organic Chemistry</div>
+      <div class="col col-2" data-label="Discription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem praesentium necessitatibus provident expedita sunt. Qui corporis, nemo, fuga cupiditate ab numquam sapiente velit corrupti rerum in, perferendis hic dolore temporibus!</div>
+      <div class="col col-3" data-label="Category">Notes</div>
+      <div class="col col-4" data-label="Price">&#8377;200</div>
+    </li>
+    <li class="table-row">
+    <div class="col col-1" data-label="Book Title">Harry Poter</div>
+      <div class="col col-2" data-label="Discription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem praesentium necessitatibus provident expedita sunt. Qui corporis, nemo, fuga cupiditate ab numquam sapiente velit corrupti rerum in, perferendis hic dolore temporibus!</div>
+      <div class="col col-3" data-label="Category">Story</div>
+      <div class="col col-4" data-label="Price">&#8377;700</div>
+    </li>
+    <li class="table-row">
+    <div class="col col-1" data-label="Book Title">Maze Runner</div>
+      <div class="col col-2" data-label="Discription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem praesentium necessitatibus provident expedita sunt. Qui corporis, nemo, fuga cupiditate ab numquam sapiente velit corrupti rerum in, perferendis hic dolore temporibus!</div>
+      <div class="col col-3" data-label="Category">Story</div>
+      <div class="col col-4" data-label="Price">&#8377;700</div>
+    </li>
+  </ul>
+</div>
     <script src="buyer_purchase.js"></script>
 </body>
 
