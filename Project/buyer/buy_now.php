@@ -4,6 +4,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,60 +36,72 @@ session_start();
         </div>
     </div>
     <div class="content">
-    <div class="container">
-        <div class="image">
-            <?php
-            if (isset($_GET['item_name'])) {
-                $_SESSION['book'] = $_GET['item_name'];
-            }
-            $book_name = $_SESSION['book'];
-            echo '<img src="./images/BOOKS COVER/' . strtolower($book_name) . '.jpg" alt="book">';
-            ?>
-            
-        </div>
-        <div class="details">
-            <?php
-            $search_query = "SELECT * FROM bproducts WHERE item_name = '$book_name'";
-            $result = mysqli_query($conn, $search_query);
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<h1>", $row['item_name'], "</h1>";
-                    $name = $row['item_name'];
-                    $price = $row['item_price'];
-                    echo "<h1> &#8377;", $row['item_price'], "</h1>";
-                    echo "<h1> Description </h1>";
-                    echo "<p>", $row['item_desc'], "</p>";
+        <div class="container">
+            <div class="image">
+                <?php
+                if (isset($_GET['item_name'])) {
+                    $_SESSION['book'] = $_GET['item_name'];
                 }
-            } else {
-                echo "<h1> Not Possible </h1>";
-            }
-            ?>
-            <form action="" method="POST" enctype="multipart/form-data">
-                <input type="submit" value="Buy Now" name="submit">
-            </form>
-            <?php
-            if (isset($_POST['submit'])) {
+                $book_name = $_SESSION['book'];
+                echo '<img src="./images/BOOKS COVER/' . strtolower($book_name) . '.jpg" alt="book">';
+                ?>
 
-                $username = $_SESSION['username'];
-                $update_query = "SELECT * from blogin where username = '$username'";
-                $update_result = mysqli_query($conn, $update_query);
-                $update_row = mysqli_fetch_array($update_result);
+            </div>
+            <div class="details">
+                <?php
+                $search_query = "SELECT * FROM bproducts WHERE item_name = '$book_name'";
+                $result = mysqli_query($conn, $search_query);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<h1>", $row['item_name'], "</h1>";
+                        $name = $row['item_name'];
+                        $price = $row['item_price'];
+                        echo "<h1> &#8377;", $row['item_price'], "</h1>";
+                        echo "<h1> Description </h1>";
+                        echo "<p>", $row['item_desc'], "</p>";
+                    }
+                } else {
+                    echo "<h1> Not Possible </h1>";
+                }
+                ?>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <input type="submit" value="Buy Now" name="submit">
+                </form>
+                <?php
+                if (isset($_POST['submit'])) {
 
-                $wallet_current = $update_row['wallet'];
-                $wallet_update = $wallet_current - $price;
+                    $username = $_SESSION['username'];
+                    $update_query = "SELECT * from blogin where username = '$username'";
+                    $update_result = mysqli_query($conn, $update_query);
+                    $update_row = mysqli_fetch_array($update_result);
 
-                $buy_query = "UPDATE blogin SET wallet = $wallet_update where username = '$username'";
-                $wallet_result = mysqli_query($conn, $buy_query);
-                $bought = "UPDATE bproducts SET bought = '$username' where item_name = '$name'";
-                $bought_result = mysqli_query($conn, $bought);
+                    $wallet_current = $update_row['wallet'];
+                    $wallet_update = $wallet_current - $price;
 
-                header('location:buyer_home.php');
-            }
-            ?>
-        </div>
+                    $buy_query = "UPDATE blogin SET wallet = $wallet_update where username = '$username'";
+                    $wallet_result = mysqli_query($conn, $buy_query);
+                    $bought = "UPDATE bproducts SET bought = '$username' where item_name = '$name'";
+                    $bought_result = mysqli_query($conn, $bought);
+
+                    header('location:buyer_home.php');
+                }
+                ?>
+            </div>
         </div>
         <div class="review">
-            <h1>review</h1>
+            <h1>Review</h1>
+            <?php
+            $review_query = "SELECT * from review order by RAND() limit 5";
+            $review_result = mysqli_query($conn, $review_query);
+            while ($review_row = mysqli_fetch_assoc($review_result)) {
+                echo "<h3 id='review_content'>", $review_row['review'], "</h3>";
+                echo "<h6 id='review_name'> - ", $review_row['name'], "</h6>";
+            }
+
+
+
+
+            ?>
         </div>
     </div>
 </body>
