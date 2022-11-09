@@ -61,6 +61,13 @@ if (isset($_POST['submit'])) {
                         <a href="forgot_pass.php" class="text">Forgot Password</a>
 
                     </div>
+                    <?php
+                    if (isset($error)) {
+                        foreach ($error as $error) {
+                            echo '<span class="error-msg">' . $error . '</span>';
+                        };
+                    };
+                    ?>
 
                     <div class="input-field button">
                         <input type="submit" name="submit" value="Login">
@@ -76,13 +83,6 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
-    <?php
-    if (isset($error)) {
-        foreach ($error as $error) {
-            echo '<span class="error-msg">' . $error . '</span>';
-        };
-    };
-    ?>
     <script src="seller_login.js"></script>
 </body>
 

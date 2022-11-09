@@ -49,7 +49,7 @@ session_start();
                     echo "<p>", $row['fname'], " ", $row['lname'], "</p>";
                 }
                 ?>
-                <a><i class="uil uil-edit"></i></a>
+                <a><i class="uil uil-check-circle"></i></a>
             </div>
             <hr>
             <div class="display">
@@ -60,7 +60,7 @@ session_start();
                     echo "<p>", $row['number'], "</p>";
                 }
                 ?>
-                <a><i class="uil uil-edit"></i></a>
+                <a><i class="uil uil-check-circle"></i></a>
             </div>
             <hr>
             <div class="display">
@@ -71,7 +71,7 @@ session_start();
                     echo "<p>", $row['email'], "</p>";
                 }
                 ?>
-                <a><i class="uil uil-edit"></i></a>
+                <a><i class="uil uil-check-circle"></i></a>
             </div>
             <hr>
             <div class="display">
@@ -82,7 +82,7 @@ session_start();
                     echo "<p>", $row['username'], "</p>";
                 }
                 ?>
-                <a><i class="uil uil-edit"></i></a>
+                <a><i class="uil uil-check-circle"></i></a>
             </div>
             <hr>
             <div class="display">
@@ -93,7 +93,7 @@ session_start();
                     echo "<p>", $row['aadhar'], "</p>";
                 }
                 ?>
-                <a><i class="uil uil-edit"></i></a>
+                <a><i class="uil uil-check-circle"></i></a>
             </div>
         </div>
         <div class="wallet">

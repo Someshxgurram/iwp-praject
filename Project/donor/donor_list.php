@@ -36,25 +36,28 @@ session_start();
         </div>
     </div>
     <center>
-        <form action="" class="search">
-            <input type="text" placeholder="Search">
+        <form action="" method="POST" class="search">
+            <input type="text" name="book_name" placeholder="Search">
             <input type="submit" class="fa" value="&#xf002;">
         </form>
+
+
     </center>
     <center>
         <h1 class="h1">Listed Items</h1>
         <div class="container">
             <?php
-            $donor_query = "SELECT * FROM dproducts where customer='none' and donor = '$_SESSION[username]'";
-            $donor_result = mysqli_query($conn, $donor_query);
-            while ($row = mysqli_fetch_assoc($donor_result)) {
-                echo '<div class="card-conatiner">
+            if (isset($_POST['submit'])) {
+                $book = $_POST["book_name"];
+                $show_query = "SELECT * FROM dproducts where item_name = '$book' and customer='none' and donor = '$_SESSION[username]'";
+                while ($row = mysqli_fetch_assoc($donor_result)) {
+                    echo '<div class="card-conatiner">
                     <div class="card">
                         <form action="" method="POST">
                         <div class="img-div">
                         <img src="./images/'
-                    . $row['filename'] . '">' .
-                    '</div>
+                        . $row['filename'] . '">' .
+                        '</div>
                             <ul class="rating">
                                 <li><a><i class="fa fa-star"></i></a></li>
                                 <li><a><i class="fa fa-star"></i></a></li>
@@ -63,13 +66,41 @@ session_start();
                                 <li><a><i class="fa fa-star-o"></i></a></li>
                             </ul>
                             <div class="book-info">';
-                echo "<h2>" . $row['item_name'] . "</h2>";
-                echo "<span>" . $row['item_desc'] . "</span>";
-                echo '<br>
+                    echo "<h2>" . $row['item_name'] . "</h2>";
+                    echo "<span>" . $row['item_desc'] . "</span>";
+                    echo '<br>
                         </form>';
-                echo '</div>
+                    echo '</div>
                 </div>
             </div>';
+                }
+            } else {
+                $donor_query = "SELECT * FROM dproducts where customer='none' and donor = '$_SESSION[username]'";
+                $donor_result = mysqli_query($conn, $donor_query);
+                while ($row = mysqli_fetch_assoc($donor_result)) {
+                    echo '<div class="card-conatiner">
+                    <div class="card">
+                        <form action="" method="POST">
+                        <div class="img-div">
+                        <img src="./images/'
+                        . $row['filename'] . '">' .
+                        '</div>
+                            <ul class="rating">
+                                <li><a><i class="fa fa-star"></i></a></li>
+                                <li><a><i class="fa fa-star"></i></a></li>
+                                <li><a><i class="fa fa-star"></i></a></li>
+                                <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                                <li><a><i class="fa fa-star-o"></i></a></li>
+                            </ul>
+                            <div class="book-info">';
+                    echo "<h2>" . ucwords($row['item_name']) . "</h2>";
+                    echo "<span>" . $row['item_desc'] . "</span>";
+                    echo '<br>
+                        </form>';
+                    echo '</div>
+                </div>
+            </div>';
+                }
             }
             ?>
         </div>

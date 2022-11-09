@@ -40,7 +40,7 @@ session_start();
             <h2>Enter The Book Details</h2>
             <input type="text" name="title" id="title" placeholder="Enter the title" required>
             <input type="text" name="desc" id="desc" placeholder="Enter the description">
-<!--             <input type="text" name="cat" id="cat" placeholder="Enter the category"> -->
+            <!--             <input type="text" name="cat" id="cat" placeholder="Enter the category"> -->
             <p>Select the Category</p>
             <select name="cat" id="cat">
                 <option value="fiction">Fiction</option>
@@ -49,7 +49,7 @@ session_start();
             </select>
             <p>Upload Book Image</p>
             <br>
-            <input type="file" name="uploadfile" placeholder="Choose Image">
+            <input type="file" class="input_file" name="uploadfile" placeholder="Choose Image">
             <input type="submit" name="submit" value="Add Item">
         </form>
         <?php

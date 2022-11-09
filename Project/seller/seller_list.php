@@ -43,7 +43,7 @@ session_start();
         </form>
     </center>
     <center>
-        <h1 class="h1">Listed Items</h1>
+        <h2 class="h1">Listed Items</h2>
 
         <!-- // $seller_query = "SELECT * FROM sproducts where customer='none' and seller = '$_SESSION[username]'";
         // $seller_result = mysqli_query($conn, $seller_query);
@@ -92,7 +92,7 @@ session_start();
                                 <li><a><i class="fa fa-star-o"></i></a></li>
                             </ul>
                             <div class="book-info">';
-                echo "<h2>" . $row['item_name'] . "</h2>";
+                echo "<h2>" . ucwords($row['item_name']) . "</h2>";
                 echo "<span>" . $row['item_desc'] . "</span>";
                 echo '<br>
                         </form>';

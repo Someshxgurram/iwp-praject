@@ -90,12 +90,13 @@ session_start();
         </div>
         <div class="review">
             <h1>Review</h1>
+            <hr class="small_line">
             <?php
             $review_query = "SELECT * from review order by RAND() limit 5";
             $review_result = mysqli_query($conn, $review_query);
             while ($review_row = mysqli_fetch_assoc($review_result)) {
                 echo "<h3 id='review_content'>", $review_row['review'], "</h3>";
-                echo "<h6 id='review_name'> - ", $review_row['name'], "</h6>";
+                echo "<h5 id='review_name'> - ", $review_row['name'], "</h5>";
             }
 
 

@@ -152,7 +152,8 @@ form {
   background-color: #1f4690;
   color: #dbe2ef;
 }
-form input ,form select{
+form input,
+form select {
   width: 250px;
   height: 35px;
   border: none;
@@ -189,6 +190,14 @@ form input[type="submit"] {
 }
 form input[type="submit"]:hover {
   transform: scaleY(1.1);
+}
+
+.container p {
+  margin-bottom: 5px;
+}
+
+.input_file {
+  color: #000;
 }
 @media screen and (max-width: 900px) {
   form {

@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['username'] = $row['username'];
         header('location:donor_list.php');
     } else {
-        $error[] = 'incorrect email or password!';
+        $error[] = 'invalid email or password!';
     }
 };
 
@@ -61,6 +61,13 @@ if (isset($_POST['submit'])) {
                         <a href="forgot_pass.php" class="text">Forgot Password</a>
 
                     </div>
+                    <?php
+                    if (isset($error)) {
+                        foreach ($error as $error) {
+                            echo '<center><span class="error-msg">' . $error . '</span></center>';
+                        };
+                    };
+                    ?>
 
                     <div class="input-field button">
                         <input type="submit" name="submit" value="Login">
@@ -76,13 +83,6 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
-    <?php
-    if (isset($error)) {
-        foreach ($error as $error) {
-            echo '<span class="error-msg">' . $error . '</span>';
-        };
-    };
-    ?>
     <script src="donor_login.js"></script>
 </body>
 

@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&family=Poppins:wght@300;400;500;600&display=swap");
 * {
   margin: 0%;
   padding: 0%;
@@ -101,9 +104,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #7fb5ff;
+  background-color: #505a68;
   margin-right: 5%;
   color: #dbe2ef;
+  padding-top: 12%;
+  padding-bottom: 15%;
+  height: 50vh;
 }
 
 .review h1 {
@@ -111,12 +117,20 @@ body {
   letter-spacing: 2px;
 }
 
+.review .small_line {
+  width: 10%;
+  border: 1px solid #dbe2ef;
+  margin-bottom: 30px;
+}
+
 #review_content {
   color: #dbe2ef;
 }
 #review_name {
-  color: #dbe2ef;
+  color: #000;
+  margin-right: -200px;
 }
+
 .container {
   display: grid;
   grid-template-columns: 30% 70%;
@@ -124,6 +138,7 @@ body {
   background-color: #1f4690;
   margin-left: 3%;
   margin-right: 3%;
+  height: 50vh;
 }
 .container .image {
   display: flex;

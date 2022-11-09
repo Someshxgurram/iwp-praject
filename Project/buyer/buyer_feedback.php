@@ -74,7 +74,7 @@ include('../includes/connection.php')
 
       <div class="buttons">
         <a href="javascript:alert('Thanks for submiting your feedback')">Submit</a>
-        <a href="You just cancelled your to submit the feedback">Cancel</a>
+        <a href="You just cancelled to submit the feedback">Cancel</a>
       </div>
     </form>
   </div>

@@ -174,3 +174,8 @@ input {
   margin-top: 30px;
   text-align: center;
 }
+
+.error-msg {
+  margin-top: 25px;
+  color: rgb(175, 55, 55);
+}

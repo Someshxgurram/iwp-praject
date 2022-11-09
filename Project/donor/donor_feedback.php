@@ -15,26 +15,26 @@ include('../includes/connection.php');
 </head>
 
 <body>
-<div class="nav">
-        <div class="title">
-            <div class="logo">
-                <h1>SecondPages</h1>
-                <img src="images/logo.png" class="logo" alt="logo">
-            </div>
-            <div class="bar">
-                <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
-            </div>
-        </div>
-        <div class="menu" id="menu">
-            <ul>
-                <li><a href="donor_list.php"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
-                <li><a href="donor_sold.php"><i class="fa fa-handshake-o "></i><span>Donated Items</span></a></li>
-                <li><a href="donor_add.php"><i class="fa fa-plus-square"></i><span>Add Items</span></a></li>
-                <li><a href="donor_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
-                <li><a href="donor_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
-            </ul>
-        </div>
+  <div class="nav">
+    <div class="title">
+      <div class="logo">
+        <h1>SecondPages</h1>
+        <img src="images/logo.png" class="logo" alt="logo">
+      </div>
+      <div class="bar">
+        <a class="fa fa-bars" id="bars" onclick="responsive()" style="cursor: pointer;"></a>
+      </div>
     </div>
+    <div class="menu" id="menu">
+      <ul>
+        <li><a href="donor_list.php"><i class="fa fa-list "></i><span>Listed Items</span></a></li>
+        <li><a href="donor_sold.php"><i class="fa fa-handshake-o "></i><span>Donated Items</span></a></li>
+        <li><a href="donor_add.php"><i class="fa fa-plus-square"></i><span>Add Items</span></a></li>
+        <li><a href="donor_feedback.php"><i class="fa fa-comments "></i><span>Feedback</span></a></li>
+        <li><a href="donor_login.php"><i class="fa fa-sign-out "></i><span>Log Out</span></a></li>
+      </ul>
+    </div>
+  </div>
   <div class="main">
     <form class="container">
       <h1 class="heading">Give feedback</h1>
@@ -74,7 +74,7 @@ include('../includes/connection.php');
 
       <div class="buttons">
         <a href="javascript:alert('Thanks for submiting your feedback')">Submit</a>
-        <a href="You just cancelled your to submit the feedback">Cancel</a>
+        <a href="You just cancelled to submit the feedback">Cancel</a>
       </div>
     </form>
   </div>

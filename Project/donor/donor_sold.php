@@ -49,10 +49,11 @@ session_start();
             while ($row = mysqli_fetch_assoc($donor_result)) {
 
                 echo  '<div class="card">
-                    <img src="./images/BOOKS COVER/' . $row['item_name'] . '" alt="book1">
-                    <h2> Name - ' . $row['item_name'] . '</h2>
-                    <h2> Category - ' . $row['item_cat'] . '</h2>
-                    <h2> Customer - ' . $row['customer'] . '</h2>
+                <img src="./images/'
+                    . $row['filename'] . '">
+                    <h2> Name - ' . ucwords($row['item_name']) . '</h2>
+                    <h2> Category - ' . ucwords($row['item_cat']) . '</h2>
+                    <h2> Customer - ' . ucwords($row['customer']) . '</h2>
                 </div>';
             }
             ?>
