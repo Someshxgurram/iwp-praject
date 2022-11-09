@@ -40,7 +40,12 @@ session_start();
             <h2>Enter The Book Details</h2>
             <input type="text" name="title" id="title" placeholder="Enter the title" required>
             <input type="text" name="desc" id="desc" placeholder="Enter the description">
-            <input type="text" name="cat" id="cat" placeholder="Enter the category">
+<!--             <input type="text" name="cat" id="cat" placeholder="Enter the category"> -->
+            <select name="cat" id="cat">
+                <option value="fiction">Fiction</option>
+                <option value="nonfiction">Non Fiction</option>
+                <option value="notes">Notes</option>
+            </select>
             <p>Upload Book Image</p>
             <br>
             <input type="file" name="uploadfile" placeholder="Choose Image">
