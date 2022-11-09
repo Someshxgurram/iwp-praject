@@ -152,7 +152,7 @@ form {
   background-color: #1f4690;
   color: #dbe2ef;
 }
-form input {
+form input ,form select{
   width: 250px;
   height: 35px;
   border: none;
