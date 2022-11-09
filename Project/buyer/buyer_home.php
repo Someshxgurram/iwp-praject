@@ -85,12 +85,179 @@ session_start();
                 }
             }
 
-
+            $book_query1 = "SELECT * from dproducts";
+            $result1 = mysqli_query($conn, $book_query1);
+            if (mysqli_num_rows($result1) > 0) {
+                while ($row = mysqli_fetch_assoc($result1)) {
+                    echo '<div class="card-conatiner">
+                        <div class="card">
+                            <form action="" method="POST">
+                                <div class="img-div">
+                                    <img src="./images/BOOKS COVER/' . strtolower($row['item_name']) . '.jpg" alt="book">
+                                </div>
+                                <ul class="rating">
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                                    <li><a><i class="fa fa-star-o"></i></a></li>
+                                </ul>
+                                <div class="book-info">';
+                    echo "<h2>" . $row['item_name'] . "</h2>";
+                    echo "<span>" . $row['item_desc'] . "</span>";
+                    echo '<br>
+                                    <a href="buy_now.php?item_name=';
+                    echo $row['item_name'];
+                    echo '"name="submit">Buy Now</a>
+                            </form>';
+                    echo '</div>
+                    </div>
+                </div>';
+                }
+            }
             ?>
         </div>
     </center>
     <center>
         <div class="container close" id="container2">
+            <?php
+
+            $book_query = "SELECT * from bproducts where item_cat='nonfiction'";
+            $result = mysqli_query($conn, $book_query);
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="card-conatiner">
+                        <div class="card">
+                            <form action="" method="POST">
+                                <div class="img-div">
+                                    <img src="./images/BOOKS COVER/' . strtolower($row['item_name']) . '.jpg" alt="book">
+                                </div>
+                                <ul class="rating">
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                                    <li><a><i class="fa fa-star-o"></i></a></li>
+                                </ul>
+                                <div class="book-info">';
+                    echo "<h2>" . $row['item_name'] . "</h2>";
+                    echo "<span>" . $row['item_desc'] . "</span>";
+                    echo "<h2> &#8377;" . $row['item_price'] . "</h2>";
+                    echo '<br>
+                                    <a href="buy_now.php?item_name=';
+                    echo $row['item_name'];
+                    echo '"name="submit">Buy Now</a>
+                            </form>';
+                    echo '</div>
+                    </div>
+                </div>';
+                }
+            }
+
+            $book_query1 = "SELECT * from dproducts where item_cat='nonfiction'";
+            $result1 = mysqli_query($conn, $book_query1);
+            if (mysqli_num_rows($result1) > 0) {
+                while ($row = mysqli_fetch_assoc($result1)) {
+                    echo '<div class="card-conatiner">
+                        <div class="card">
+                            <form action="" method="POST">
+                                <div class="img-div">
+                                    <img src="./images/BOOKS COVER/' . strtolower($row['item_name']) . '.jpg" alt="book">
+                                </div>
+                                <ul class="rating">
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                                    <li><a><i class="fa fa-star-o"></i></a></li>
+                                </ul>
+                                <div class="book-info">';
+                    echo "<h2>" . $row['item_name'] . "</h2>";
+                    echo "<span>" . $row['item_desc'] . "</span>";
+                    echo '<br>
+                                    <a href="buy_now.php?item_name=';
+                    echo $row['item_name'];
+                    echo '"name="submit">Buy Now</a>
+                            </form>';
+                    echo '</div>
+                    </div>
+                </div>';
+                }
+            }
+            ?>
+        </div>
+    </center>
+    <center>
+        <div class="container close" id="container3">
+            <?php
+
+            $book_query = "SELECT * from bproducts where item_cat='notes'";
+            $result = mysqli_query($conn, $book_query);
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="card-conatiner">
+                        <div class="card">
+                            <form action="" method="POST">
+                                <div class="img-div">
+                                    <img src="./images/BOOKS COVER/' . strtolower($row['item_name']) . '.jpg" alt="book">
+                                </div>
+                                <ul class="rating">
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                                    <li><a><i class="fa fa-star-o"></i></a></li>
+                                </ul>
+                                <div class="book-info">';
+                    echo "<h2>" . $row['item_name'] . "</h2>";
+                    echo "<span>" . $row['item_desc'] . "</span>";
+                    echo "<h2> &#8377;" . $row['item_price'] . "</h2>";
+                    echo '<br>
+                                    <a href="buy_now.php?item_name=';
+                    echo $row['item_name'];
+                    echo '"name="submit">Buy Now</a>
+                            </form>';
+                    echo '</div>
+                    </div>
+                </div>';
+                }
+            }
+
+            $book_query1 = "SELECT * from dproducts where item_cat='notes'";
+            $result1 = mysqli_query($conn, $book_query1);
+            if (mysqli_num_rows($result1) > 0) {
+                while ($row = mysqli_fetch_assoc($result1)) {
+                    echo '<div class="card-conatiner">
+                        <div class="card">
+                            <form action="" method="POST">
+                                <div class="img-div">
+                                    <img src="./images/BOOKS COVER/' . strtolower($row['item_name']) . '.jpg" alt="book">
+                                </div>
+                                <ul class="rating">
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                                    <li><a><i class="fa fa-star-o"></i></a></li>
+                                </ul>
+                                <div class="book-info">';
+                    echo "<h2>" . $row['item_name'] . "</h2>";
+                    echo "<span>" . $row['item_desc'] . "</span>";
+                    echo '<br>
+                                    <a href="buy_now.php?item_name=';
+                    echo $row['item_name'];
+                    echo '"name="submit">Buy Now</a>
+                            </form>';
+                    echo '</div>
+                    </div>
+                </div>';
+                }
+            }
+            ?>
+        </div>
+    </center>
+    <center>
+        <div class="container close" id="container4">
             <?php
 
             $book_query = "SELECT * from bproducts where item_cat='fiction'";
@@ -125,16 +292,44 @@ session_start();
                 }
             }
 
-
+            $book_query1 = "SELECT * from dproducts where item_cat='fiction'";
+            $result1 = mysqli_query($conn, $book_query1);
+            if (mysqli_num_rows($result1) > 0) {
+                while ($row = mysqli_fetch_assoc($result1)) {
+                    echo '<div class="card-conatiner">
+                        <div class="card">
+                            <form action="" method="POST">
+                                <div class="img-div">
+                                    <img src="./images/BOOKS COVER/' . strtolower($row['item_name']) . '.jpg" alt="book">
+                                </div>
+                                <ul class="rating">
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star"></i></a></li>
+                                    <li><a><i class="fa fa-star-half-empty"></i></a></li>
+                                    <li><a><i class="fa fa-star-o"></i></a></li>
+                                </ul>
+                                <div class="book-info">';
+                    echo "<h2>" . $row['item_name'] . "</h2>";
+                    echo "<span>" . $row['item_desc'] . "</span>";
+                    echo '<br>
+                                    <a href="buy_now.php?item_name=';
+                    echo $row['item_name'];
+                    echo '"name="submit">Buy Now</a>
+                            </form>';
+                    echo '</div>
+                    </div>
+                </div>';
+                }
+            }
             ?>
         </div>
     </center>
-
     <div class="choices" id="choicem">
         <a class="fa fa-caret-square-o-right" id="choice" onclick="choice()"></a>
         <a onclick="con1()"><i class="fa fa-book"></i><span>Non-Fiction</span></a>
-        <a><i class="fa fa-mortar-board"></i><span>Study Materials</span></a>
-        <a><i class="fa fa-rocket"></i><span>Fiction</span></a>
+        <a onclick="con2()"><i class="fa fa-mortar-board"></i><span>Study Materials</span></a>
+        <a onclick="con3()"><i class="fa fa-rocket"></i><span>Fiction</span></a>
     </div>
     <script src="buyer_home.js"></script>
 </body>
