@@ -41,6 +41,7 @@ session_start();
             <input type="text" name="title" id="title" placeholder="Enter the title" required>
             <input type="text" name="desc" id="desc" placeholder="Enter the description">
 <!--             <input type="text" name="cat" id="cat" placeholder="Enter the category"> -->
+            <p>Select the Category</p>
             <select name="cat" id="cat">
                 <option value="fiction">Fiction</option>
                 <option value="nonfiction">Non Fiction</option>
